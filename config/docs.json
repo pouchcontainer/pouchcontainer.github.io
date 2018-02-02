@@ -1,0 +1,50 @@
+{
+  "menu": [
+    {
+      "open": true,
+      "text": "Features",
+      "children": [
+        {
+          "text": "Prometheus",
+          "url": "/docs/features/pouch_with_prometheus.md"
+        }, {
+          "text": "Rich Container",
+          "url": "/docs/features/pouch_with_rich_container.md"
+        }, {
+          "text": "RunV",
+          "url": "/docs/features/pouch_with_runV.md"
+        }
+      ]
+    }, {
+      "text": "Architecture",
+      "url": "/docs/architecture.md"
+    }, {
+      "open": true,
+      "text": "API",
+      "children": [
+        {
+          "text": "HTTP API",
+          "url": "/docs/api/HTTP_API.md"
+        }, {
+          "text": "HTTP API ChangeLog",
+          "url": "/docs/api/HTTP_API_CHANGELOG.md"
+        }
+      ]
+    }
+  ],
+  "banner": {
+    "text": "Pouch - An Efficient Container Engine",
+    "buttons": [
+      {
+        "type": "white",
+        "text": "Get Started",
+        "url": "javascript:void(0)"
+      }, {
+        "type": "orange",
+        "text": "Contribute Docs",
+        "url": "javascript:void(0)"
+      }
+    ]
+  }
+}
+

@@ -1,0 +1,126 @@
+@import './variable';
+@import './normalize';
+
+body {
+  color: $color_normal;
+  font-size: 14px;
+  line-height: 1.5em;
+  font-family: Avenir-Roman;
+}
+
+a {
+  color: $color_normal;
+  text-decoration: none;
+  &:hover {
+    color: $color_dark;
+  }
+}
+
+header.pouch-header {
+  height: $header_height;
+  background: #FFF;
+  padding: 0 50px;
+  border-bottom: 1px solid $border-color;
+  .pouch-footer-inner {
+    width: $cols-width;
+    margin: 0 auto;
+  }
+  .pouch-logo {
+    height: $header_height;
+    display: block;
+    float: left;
+    img {
+      height: $header_height/2;
+      margin-top: $header_height/4;
+    }
+  }
+  .pouch-header-menu {
+    float: right;
+    margin: 0;
+    padding: 0;
+    > li {
+      float: left;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      a {
+        display: block;
+        padding: 0 30px;
+      }
+      a.pouch-header-link {
+        height: $header_height;
+        line-height: $header_height;
+        font-weight: bold;
+        font-size: 14px;
+        transition-duration: 0.3s;
+        &:hover {
+          color: $color_orange;
+        }
+      }
+      a.pouch-header-button {
+        height: $header_height/2;
+        line-height: $header_height/2;
+        margin-top: $header_height/4;
+        border: 1px solid #EBECF0;
+        border-radius: $header_height/4;
+        margin-left: 20px;
+        &:hover {
+          background: $color_orange;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+.pouch-body {
+  min-height: 400px;
+}
+
+footer.pouch-footer {
+  background: $bg_gray;
+  border-top: 1px solid $border-color;
+  .pouch-footer-inner {
+    width: $cols-width;
+    margin: 0 auto;
+    .pouch-footer-cols {
+      padding: 60px 0;
+      .pouch-footer-col {
+        width: 33.3333%;
+        float: left;
+      }
+      &:after {
+        clear: both;
+        content: '';
+        display: block;
+      }
+    }
+    .pouch-footer-menu {
+      font-size: 16px;
+      margin: 0;
+      dt, dd {
+        margin: 0;
+        padding: 0;
+      }
+      dt {
+        margin-bottom: 20px;
+      }
+      dd a {
+        color: $color_gray;
+        display: block;
+        height: 35px;
+        line-height: 35px;
+        transition-duration: 0.3s;
+        &:hover {
+          color: $color_orange;
+        }
+      }
+    }
+    .pouch-footer-copyright {
+      color: $color_gray;
+      text-align: center;
+      padding: 30px 0;
+      font-size: 12px;
+      border-top: 1px solid $border-color;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "menu": [
+      {
+        "text": "Home",
+        "url": "/",
+        "type": "link"
+      }, {
+        "text": "Docs",
+        "url": "/docs/features/pouch_with_prometheus.md",
+        "type": "link"
+      }, {
+        "text": "Download",
+        "url": "/docs/api/HTTP_API_CHANGELOG.md",
+        "type": "button"
+      }
+    ]
+  }
+}
