@@ -47,7 +47,7 @@ class App extends React.Component {
   render() {
     const { header, footer } = this.state.config;
     return (
-      <BrowserRouter>
+      <HashRouter>
         <div>
           <header className="pouch-header">
             <div className="pouch-footer-inner">
@@ -91,7 +91,7 @@ class App extends React.Component {
             </div>
           </footer>
         </div>
-      </BrowserRouter>
+      </HashRouter>
     );
   }
 }
