@@ -79,7 +79,7 @@ export default class Home extends React.Component {
       <div>
         <div className="pouch-docs-banner">
           <div className="pouch-docs-banner-inner">
-            <img height="300" src="https://img.alicdn.com/tfs/TB1l4EFXeuSBuNjSsplXXbe8pXa-1932-600.png" />
+            <img src="https://img.alicdn.com/tfs/TB1l4EFXeuSBuNjSsplXXbe8pXa-1932-600.png" />
             <div className="pouch-docs-banner-content">
               <h1>{banner.text}</h1>
               <div>

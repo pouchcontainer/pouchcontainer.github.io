@@ -63,49 +63,33 @@ class App extends React.Component {
               </ul>
             </div>
           </header>
-
-        <div className="pouch-body">
-          <Route exact path="/" component={PageHome}/>
-          <Route path="/docs" component={PageDocs}/>
-          <Route path="/community" component={PageCommunity}/>
-        </div>
-
-        <footer className="pouch-footer">
-          <div className="pouch-footer-inner">
-            <div className="pouch-footer-cols">
-              <div className="pouch-footer-col">
-                <img height="45" src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>
-              </div>
-              <div className="pouch-footer-col">
-                <dl className="pouch-footer-menu">
-                  <dt>GitHub</dt>
-                  <dd><a href="javascript:void(0)">Getting Started</a></dd>
-                  <dd><a href="javascript:void(0)">Introduction</a></dd>
-                  <dd><a href="javascript:void(0)">Features</a></dd>
-                  <dd><a href="javascript:void(0)">Architecture</a></dd>
-                  <dd><a href="javascript:void(0)">CLI Manual</a></dd>
-                  <dd><a href="javascript:void(0)">API Manual</a></dd>
-                  <dd><a href="javascript:void(0)">FAQ</a></dd>
-                </dl>
-              </div>
-              <div className="pouch-footer-col">
-                <dl className="pouch-footer-menu">
-                  <dt>Cotribution</dt>
-                  <dd><a href="javascript:void(0)">Contributing</a></dd>
-                  <dd><a href="javascript:void(0)">Reporting security issues</a></dd>
-                  <dd><a href="javascript:void(0)">Reporting general issues</a></dd>
-                  <dd><a href="javascript:void(0)">Code and doc contribution</a></dd>
-                  <dd><a href="javascript:void(0)">Roadmap</a></dd>
-                  <dd><a href="javascript:void(0)">Contact</a></dd>
-                  <dd><a href="javascript:void(0)">License</a></dd>
-                </dl>
-              </div>
-            </div>
-            <div className="pouch-footer-copyright">
-              Copyright &copy; 1999 - 2018 Alibaba Inc. All Rights Reserved.
-            </div>
+          <div className="pouch-body">
+            <Route exact path="/" component={PageHome}/>
+            <Route path="/docs" component={PageDocs}/>
+            <Route path="/community" component={PageCommunity}/>
           </div>
-        </footer>
+          <footer className="pouch-footer">
+            <div className="pouch-footer-inner">
+              <div className="pouch-footer-cols">
+                <div className="pouch-footer-col">
+                  <img height="45" src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>
+                </div>
+                { _.map(footer.menu, (item, key)=> {
+                  return <div key={key} className="pouch-footer-col">
+                    <dl className="pouch-footer-menu">
+                      <dt>{item.text}</dt>
+                      { _.map(item.children, (child, index)=> {
+                        return <dd key={index}><a href={child.url}>{child.text}</a></dd>
+                        })}
+                    </dl>
+                  </div>
+                  }) }
+              </div>
+              <div className="pouch-footer-copyright">
+                Copyright &copy; 1999 - 2018 Alibaba Inc. All Rights Reserved.
+              </div>
+            </div>
+          </footer>
         </div>
       </HashRouter>
     );

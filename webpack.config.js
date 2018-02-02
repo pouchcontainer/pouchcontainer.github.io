@@ -27,8 +27,8 @@ module.exports = {
     chunkFilename: '[chunkhash].js'
   },
   externals: {
-    // react: 'React',
-    // 'react-dom': 'ReactDOM',
+     react: 'React',
+     'react-dom': 'ReactDOM'
   },
   query: {
     cacheDirectory: true,

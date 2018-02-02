@@ -2,6 +2,18 @@
 
 $side_width: 250px;
 
+@keyframes docBanner
+{
+  from {
+    transform: scale(1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+}
+
 .pouch-docs-banner {
   height: 300px;
   background-image: linear-gradient(89deg, #FFA529 0%, #FF8025 100%);
@@ -11,8 +23,10 @@ $side_width: 250px;
     margin: 0 auto;
     text-align: center;
     position: relative;
+    overflow: hidden;
     img {
       height: 300px;
+      animation: docBanner 8s linear 0s infinite alternate;
     }
   }
   .pouch-docs-banner-content {
@@ -26,6 +40,7 @@ $side_width: 250px;
     h1 {
       font-size: 40px;
       margin-bottom: 40px;
+      font-weight: normal;
     }
     .pouch-banner-btn {
       display: inline-block;
@@ -62,6 +77,7 @@ $side_width: 250px;
   .pouch-doc-sidebar {
     width: $side_width;
     float: left;
+    border-right: 1px solid $border-color;
   }
   .pouch-doc-body {
     width: $cols-width - $side_width;
@@ -69,6 +85,7 @@ $side_width: 250px;
     padding: 0 40px;
     box-sizing: border-box;
     border-left: 1px solid $border-color;
+    margin-left: -1px;
   }
 }
 
@@ -84,7 +101,7 @@ $side_width: 250px;
     overflow: hidden;
     transition-duration: 0.3s;
   }
-  li > a{
+  a.pouch-doc-menu-item{
     height: 40px;
     line-height: 40px;
     display: block;
@@ -96,6 +113,9 @@ $side_width: 250px;
     &:hover, &.pouch-doc-menu-item-selected {
       border-left-color: $color_orange;
       background-color: $bg_gray;
+    }
+    &.pouch-doc-menu-parent {
+
     }
     .pouch-doc-menu-toggle {
       width: 12px;
@@ -110,7 +130,7 @@ $side_width: 250px;
       padding-left: 30px;
       background-image: url('https://img.alicdn.com/tfs/TB1PgcHXkyWBuNjy0FpXXassXXa-4-4.png');
       background-repeat: no-repeat;
-      background-position: 15px 17px;
+      background-position: 18px 17px;
     }
   }
 }

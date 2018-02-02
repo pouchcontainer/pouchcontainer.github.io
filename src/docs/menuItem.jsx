@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class MenuItem extends React.Component {
   constructor(props) {
@@ -12,9 +13,10 @@ export default class MenuItem extends React.Component {
     return (
       <ul className="pouch-doc-menu">
         { _.map(item.children, (child, index) => {
+          const cls = `pouch-doc-menu-item ${location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
           return (
           <li key={index}>
-            <a className={location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''} href={child.url ? `#${child.url}` : 'javascript:void(0)' }>{child.text}</a>
+            <Link className={cls} to={child.url}>{child.text}</Link>
           </li>
             );
           }) }
@@ -34,15 +36,28 @@ export default class MenuItem extends React.Component {
   render() {
     const { item, location } = this.props;
     const hasChildren  = item.children && item.children.length;
-    const img = <img style={{transform: `rotate(${hasChildren && this.state.open ? 0:-90}deg)`}} className="pouch-doc-menu-toggle" src="https://img.alicdn.com/tfs/TB1BMUGXh9YBuNjy0FfXXXIsVXa-22-21.jpg" />;
-    return (
-      <li style={{height: hasChildren && this.state.open ? 40 * ( item.children.length + 1 ) : 40}}>
-        <a onClick={this.toggle} className={location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''} href={item.url ? `#${item.url}` : 'javascript:void(0)' }>
-          { item.text }
-          { hasChildren ? img : null }
-        </a>
-        { hasChildren ?  this.renderSubMenu() : null }
-      </li>
-    );
+    const style = {
+      height: hasChildren && this.state.open ? 40 * ( item.children.length + 1 ) : 40
+    };
+    if(hasChildren) {
+      return (
+        <li style={style}>
+          <a className="pouch-doc-menu-item pouch-doc-menu-parent" onClick={this.toggle} href="javascript:void(0)">
+            {item.text}
+            <img style={{transform: `rotate(${this.state.open ? 0:-90}deg)`}} className="pouch-doc-menu-toggle" src="https://img.alicdn.com/tfs/TB1BMUGXh9YBuNjy0FfXXXIsVXa-22-21.jpg" />
+          </a>
+          { this.renderSubMenu() }
+        </li>
+      )
+    } else {
+      const cls = `pouch-doc-menu-item ${location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''}`
+      return (
+        <li style={style}>
+          <Link onClick={this.toggle} className={cls} to={ item.url }>
+            {item.text}
+          </Link>
+        </li>
+      )
+    }
   }
 }

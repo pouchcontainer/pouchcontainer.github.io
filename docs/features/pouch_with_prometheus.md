@@ -15,7 +15,7 @@ We use prometheus [go-sdk](https://github.com/prometheus/client_golang) to monit
   
 Users can start pouchd listening on `0.0.0.0:4243` via `pouchd -l tcp://0.0.0.0:4243`, then issue `GET http://127.0.0.1:4243/metrics`  request to get a full list of prometheus-formatted metrics as below:
 
-``` bash
+```
 # HELP go_gc_duration_seconds A summary of the GC invocation durations.
 # TYPE go_gc_duration_seconds summary
 go_gc_duration_seconds{quantile="0"} 0.000111176

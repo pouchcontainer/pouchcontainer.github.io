@@ -7,12 +7,69 @@
         "type": "link"
       }, {
         "text": "Docs",
-        "url": "/docs/features/pouch_with_prometheus.md",
+        "url": "/docs/architecture.md",
         "type": "link"
       }, {
         "text": "Download",
-        "url": "/docs/api/HTTP_API_CHANGELOG.md",
+        "url": "/docs/features/pouch_with_runV.md",
         "type": "button"
+      }
+    ]
+  },
+  "footer": {
+    "menu": [
+      {
+        "text": "GitHub",
+        "children": [
+          {
+            "text": "Getting Started",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Introduction",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Features",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Architecture",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "CLI Manual",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "API Manual",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "FAQ",
+            "url": "javascript:void(0)"
+          }
+        ]
+      }, {
+        "text": "Cotribution",
+        "children": [
+          {
+            "text": "Contributing",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Reporting security issues",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Reporting general issues",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Code and doc contribution",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Roadmap",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "Contact",
+            "url": "javascript:void(0)"
+          }, {
+            "text": "License",
+            "url": "javascript:void(0)"
+          }
+        ]
       }
     ]
   }

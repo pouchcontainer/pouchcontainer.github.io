@@ -4,8 +4,9 @@
 body {
   color: $color_normal;
   font-size: 14px;
-  line-height: 1.5em;
-  font-family: Avenir-Roman;
+  line-height: 1.6em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  background: #FFF;
 }
 
 a {
@@ -46,13 +47,12 @@ header.pouch-header {
       a {
         display: block;
         padding: 0 30px;
+        font-size: 16px;
+        transition-duration: 0.3s;
       }
       a.pouch-header-link {
         height: $header_height;
         line-height: $header_height;
-        font-weight: bold;
-        font-size: 14px;
-        transition-duration: 0.3s;
         &:hover {
           color: $color_orange;
         }
