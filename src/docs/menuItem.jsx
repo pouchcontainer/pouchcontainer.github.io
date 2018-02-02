@@ -40,12 +40,14 @@ export default class MenuItem extends React.Component {
       height: hasChildren && this.state.open ? 40 * ( item.children.length + 1 ) : 40
     };
     if(hasChildren) {
+      const url = `/docs/${item.text.toLowerCase()}/README.md`;
+      const cls = `pouch-doc-menu-item ${location.pathname === url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
-          <a className="pouch-doc-menu-item pouch-doc-menu-parent" onClick={this.toggle} href="javascript:void(0)">
+          <Link onClick={this.toggle} className={cls} to={ url }>
             {item.text}
             <img style={{transform: `rotate(${this.state.open ? 0:-90}deg)`}} className="pouch-doc-menu-toggle" src="https://img.alicdn.com/tfs/TB1BMUGXh9YBuNjy0FfXXXIsVXa-22-21.jpg" />
-          </a>
+          </Link>
           { this.renderSubMenu() }
         </li>
       )

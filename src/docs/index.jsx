@@ -1,8 +1,13 @@
 import React from 'react';
 import Exceed from 'exceed';
+import path from 'path';
 import _ from 'lodash';
 import MarkdownIt from 'markdown-it';
+import markdownItReplaceLink from "markdown-it-replace-link";
+import markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
+import markdownItLinkAttributes from 'markdown-it-link-attributes';
 import hljs from 'highlight.js';
+import { animateScroll, scroller } from 'react-scroll'
 
 import MenuItem from './menuItem.jsx';
 
@@ -10,20 +15,48 @@ import 'highlight.js/styles/github.css';
 import '../components/markdown.scss';
 import './index.scss';
 
-
 const md = new MarkdownIt({
   html: true,
-  linkify: true,
   typographer: true,
   highlight: (str, lang) => {
+    lang = _.isEmpty(lang) || lang==='shell' ? 'bash' : lang;
     if (lang && hljs.getLanguage(lang)) {
       try {
         return hljs.highlight(lang, str).value;
       } catch (__) {}
     }
     return '';
+  },
+  replaceLink: function (link) {
+    if(link.match(/^(http|\/\/)/i)){
+
+    } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
+      link = `${path.join('/docs', link.replace(/\.\.\//, ''))}`;
+    } else if(link.match(/^(\.|\w|\/).*\.md$/)) {
+      link = `#${path.join('/docs', link)}`;
+    } else if(link.match(/^(\.|\w|\/).*\w$/)) {
+      link = `#${path.join('/docs', link, 'README.md')}`;
+    }
+    return link;
   }
-});
+})
+  .use(markdownItLinkAttributes, [
+    {
+      pattern: /^#(\w|_|-).*/,
+      attrs: {
+        className: 'pouch-doc-anchor'
+      }
+    }, {
+      pattern: /^(http|\/\/)/i,
+      attrs: {
+        target: '_blank'
+      }
+    }
+  ])
+  .use(markdownItReplaceLink)
+  .use(markdownItTocAndAnchor, {
+    anchorLink: false
+  });
 
 export default class Home extends React.Component {
   constructor(props) {
@@ -38,7 +71,8 @@ export default class Home extends React.Component {
     this.exceed = new Exceed();
     this.getConfig('config/docs.json');
     this.getMarkdown(props.location.pathname);
-    window.addEventListener('hashchange', this.onHashChange)
+    window.addEventListener('hashchange', this.onHashChange);
+    window.addEventListener('click', this.onAnchorClick)
   }
   setExceedApi = (path) => {
     this.exceed.use([{
@@ -48,8 +82,23 @@ export default class Home extends React.Component {
       }
     }]);
   };
+  onAnchorClick = (e) => {
+    const target = e.target;
+    if(target.className === 'pouch-doc-anchor') {
+      const id = target.hash.replace(/^#/, '');
+      scroller.scrollTo(id, {
+        duration: 1000,
+        smooth: "easeInOutQuint",
+      });
+      e.preventDefault();
+    }
+  };
   onHashChange = () => {
     const path = window.location.hash.replace(/^#/, '');
+    //animateScroll.scrollToTop({
+    //  duration: 1000,
+    //  smooth: "easeInOutQuint",
+    //});
     this.getMarkdown(path);
   };
   getConfig = (path) => {
@@ -68,7 +117,11 @@ export default class Home extends React.Component {
         api: 'getConfig'
       }).then((res) => {
       this.setState({
-        doc: md.render(res)
+        doc: md.render(_.isString(res) ? res : '')
+      });
+    }).fail((err) => {
+      this.setState({
+        doc: '<div style="text-align: center;padding: 50px 0"><img width="45%" src="https://img.alicdn.com/tfs/TB1CyRNjBTH8KJjy0FiXXcRsXXa-840-600.png" /></div>'
       });
     });
   };
@@ -87,7 +140,7 @@ export default class Home extends React.Component {
                   return <a key={key} className={`pouch-banner-btn pouch-banner-btn-${item.type}`} href={item.url}>
                     {item.text}
                   </a>
-                }) }
+                  }) }
               </div>
             </div>
           </div>
@@ -97,7 +150,7 @@ export default class Home extends React.Component {
             <ul className="pouch-doc-menu">
               { _.map(menu, (item, key) => {
                 return <MenuItem location={location} key={key} item={item} />;
-              }) }
+                }) }
             </ul>
           </div>
           <div className="pouch-doc-body">

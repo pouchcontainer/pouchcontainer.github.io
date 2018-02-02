@@ -65,9 +65,6 @@
       "text": "Commandline",
       "children": [
         {
-          "text": "README",
-          "url": "/docs/commandline/README.md"
-        }, {
           "text": "pouch",
           "url": "/docs/commandline/pouch.md"
         }, {
