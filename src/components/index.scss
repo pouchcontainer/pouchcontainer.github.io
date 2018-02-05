@@ -17,15 +17,38 @@ a {
   }
 }
 
+.pouch-banner-btn {
+  display: inline-block;
+  height: 55px;
+  line-height: 55px;
+  border-radius: 30px;
+  border: 2px solid $color_white;
+  padding: 0 60px;
+  transition-duration: 0.3s;
+  color: $color_white;
+  &:hover {
+    box-shadow: 0 0 20px $color_white;
+  }
+  &.pouch-banner-btn-white {
+    background: #FFF;
+    color: $color_orange;
+  }
+  &.pouch-banner-btn-orange {
+    color: $color_white;
+  }
+}
+
+.pouch-cols-container {
+  width: 1280px;
+  margin: 0 auto;
+  position: relative;
+}
+
 header.pouch-header {
   height: $header_height;
   background: #FFF;
   padding: 0 50px;
   border-bottom: 1px solid $border-color;
-  .pouch-footer-inner {
-    width: $cols-width;
-    margin: 0 auto;
-  }
   .pouch-logo {
     height: $header_height;
     display: block;
@@ -79,48 +102,45 @@ header.pouch-header {
 footer.pouch-footer {
   background: $bg_gray;
   border-top: 1px solid $border-color;
-  .pouch-footer-inner {
-    width: $cols-width;
-    margin: 0 auto;
-    .pouch-footer-cols {
-      padding: 60px 0;
-      .pouch-footer-col {
-        width: 33.3333%;
-        float: left;
-      }
-      &:after {
-        clear: both;
-        content: '';
-        display: block;
-      }
+  margin: 0 auto;
+  .pouch-footer-cols {
+    padding: 60px 0;
+    .pouch-footer-col {
+      width: 33.3333%;
+      float: left;
     }
-    .pouch-footer-menu {
-      font-size: 16px;
+    &:after {
+      clear: both;
+      content: '';
+      display: block;
+    }
+  }
+  .pouch-footer-menu {
+    font-size: 16px;
+    margin: 0;
+    dt, dd {
       margin: 0;
-      dt, dd {
-        margin: 0;
-        padding: 0;
-      }
-      dt {
-        margin-bottom: 20px;
-      }
-      dd a {
-        color: $color_gray;
-        display: block;
-        height: 35px;
-        line-height: 35px;
-        transition-duration: 0.3s;
-        &:hover {
-          color: $color_orange;
-        }
-      }
+      padding: 0;
     }
-    .pouch-footer-copyright {
+    dt {
+      margin-bottom: 20px;
+    }
+    dd a {
       color: $color_gray;
-      text-align: center;
-      padding: 30px 0;
-      font-size: 12px;
-      border-top: 1px solid $border-color;
+      display: block;
+      height: 35px;
+      line-height: 35px;
+      transition-duration: 0.3s;
+      &:hover {
+        color: $color_orange;
+      }
     }
+  }
+  .pouch-footer-copyright {
+    color: $color_gray;
+    text-align: center;
+    padding: 30px 0;
+    font-size: 12px;
+    border-top: 1px solid $border-color;
   }
 }

@@ -4,19 +4,107 @@
   font-size: 16px;
 }
 
+@keyframes homeBanner1
+{
+  from {
+    transform: rotate(90deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes homeBanner2
+{
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(-360deg);
+    opacity: 0.5;
+  }
+}
 .pouch-home-banner {
-  height: 300px;
-  background: $color_orange;
+  height: 560px;
+  position: relative;
+  color: #FFF;
+  background: $bg_gray;
+  overflow: hidden;
+  .pouch-home-banner-bg {
+    height: 560px;
+    width: 1920px;
+    position: absolute;
+    left: 50%;
+    top:0 ;
+    margin-left: -960px;
+  }
+  img.pouch-home-banner-img {
+    position: absolute;
+    top: 80px;
+    width: 217px;
+    height: 381px;
+    left: 180px;
+    transition-duration: 0.3s;
+  }
+  .pouch-home-banner-rotate-img-wrap {
+    height: 560px;
+    width: 800px;
+    left: -110px;
+    position: absolute;
+    top:0;
+    img.pouch-home-banner-rotate-img {
+      position: absolute;
+      &.pouch-home-banner-rotate-img-1 {
+        width: 428px;
+        top: 70px;
+        left: 180px;
+        animation: homeBanner1 20s linear 0s infinite alternate;
+      }
+      &.pouch-home-banner-rotate-img-2 {
+        width: 594px;
+        left: 90px;
+        top: -10px;
+        animation: homeBanner2 40s linear 0s infinite alternate;
+      }
+      &.pouch-home-banner-rotate-img-3 {
+        top: -100px;
+        width: 788px;
+        animation: homeBanner1 80s linear 0s infinite alternate;
+      }
+    }
+  }
+
+  .pouch-home-banner-content {
+    position: absolute;
+    top: 100px;
+    right: 100px;
+    width: 500px;
+    line-height: 1.4em;
+    h1 {
+      line-height: 1.4em;
+      font-weight: normal;
+      font-size: 40px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
 }
 
 .pouch-home-introduction {
   background: $bg_gray;
+  position: relative;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    width: 152px;
+    height: 103px;
+    margin-top: -50px;
+  }
   .pouch-home-introduction-content {
-    width: 60%;
     margin: 0 auto;
-    background: url('https://img.alicdn.com/tfs/TB1VeltXAyWBuNjy0FpXXassXXa-142-104.png') 0 center no-repeat;
-    height: 230px;
-    padding: 80px 0 0 300px;
+    padding: 80px 80px 80px 300px;
     box-sizing: border-box;
     line-height: 1.7em;
     color: $color_light;
@@ -24,8 +112,6 @@
 }
 
 .pouch-home-advantages {
-  width: $cols-width;
-  margin: 0 auto;
   min-height: 500px;
   padding: 120px 0;
   h1 {
@@ -36,8 +122,17 @@
     font-weight: normal;
   }
   .pouch-home-advantages-item {
-    height: 400px;
     box-sizing: border-box;
+    position: relative;
+    min-height: 500px;
+    padding: 80px 0;
+    img {
+      width: 600px;
+      height: 501px;
+      position: absolute;
+      top: 50%;
+      margin-top: -250px;
+    }
     .pouch-home-advantages-devider {
       width: 40px;
       height: 4px;
@@ -54,19 +149,21 @@
     }
   }
   .pouch-home-advantages-item-1{
-    background: url('https://img.alicdn.com/tfs/TB1blpwXuuSBuNjy1XcXXcYjFXa-530-400.png') left center no-repeat;
     margin-bottom: 40px;
-    padding: 60px 0 0 600px;
+    padding-left: 700px;
+    img {
+      left:0;
+    }
   }
   .pouch-home-advantages-item-2{
-    background: url('https://img.alicdn.com/tfs/TB17VjeXDtYBeNjy1XdXXXXyVXa-530-400.png') right center no-repeat;
-    padding: 60px 600px 0 0;
+    padding-right: 700px;
+    img {
+      right:0;
+    }
   }
 }
 
 .pouch-home-features {
-  width: $cols-width;
-  margin: 0 auto;
   list-style: none;
   padding: 0;
   &:after {
@@ -102,10 +199,20 @@
 }
 
 .pouch-home-architecture {
-  background: $color_orange;
   color: $color_white;
   padding: 100px 0;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+  > img {
+    width: 1920px;
+    height: 680px;
+    position: absolute;
+    top:0;
+    left: 50%;
+    margin-left: -960px;
+    z-index: -1;
+  }
   > h1 {
     font-size: 36px;
     line-height: 1em;
@@ -115,21 +222,5 @@
     width: 50%;
     margin: 0 auto;
     line-height: 1.8em;
-  }
-  > a {
-    height: 50px;
-    border-radius: 25px;
-    border:2px solid $color_white;
-    color: $color_white;
-    display: inline-block;
-    line-height: 50px;
-    padding: 0 80px;
-    font-size: 20px;
-    margin: 60px 0;
-    transition-duration: 0.3s;
-    &:hover {
-      color: $color_white;
-      box-shadow: 0 0 20px $color_white;
-    }
   }
 }

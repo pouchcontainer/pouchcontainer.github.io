@@ -69,7 +69,7 @@ class App extends React.Component {
             <Route path="/community" component={PageCommunity}/>
           </div>
           <footer className="pouch-footer">
-            <div className="pouch-footer-inner">
+            <div className="pouch-cols-container">
               <div className="pouch-footer-cols">
                 <div className="pouch-footer-col">
                   <img height="45" src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>

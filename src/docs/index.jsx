@@ -15,65 +15,63 @@ import 'highlight.js/styles/github.css';
 import '../components/markdown.scss';
 import './index.scss';
 
-const md = new MarkdownIt({
-  html: true,
-  typographer: true,
-  highlight: (str, lang) => {
-    lang = _.isEmpty(lang) || lang==='shell' ? 'bash' : lang;
-    if (lang && hljs.getLanguage(lang)) {
-      try {
-        return hljs.highlight(lang, str).value;
-      } catch (__) {}
-    }
-    return '';
-  },
-  replaceLink: function (link) {
-    if(link.match(/^(http|\/\/)/i)){
-
-    } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
-      link = `${path.join('/docs', link.replace(/\.\.\//, ''))}`;
-    } else if(link.match(/^(\.|\w|\/).*\.md$/)) {
-      link = `#${path.join('/docs', link)}`;
-    } else if(link.match(/^(\.|\w|\/).*\w$/)) {
-      link = `#${path.join('/docs', link, 'README.md')}`;
-    }
-    return link;
-  }
-})
-  .use(markdownItLinkAttributes, [
-    {
-      pattern: /^#(\w|_|-).*/,
-      attrs: {
-        className: 'pouch-doc-anchor'
-      }
-    }, {
-      pattern: /^(http|\/\/)/i,
-      attrs: {
-        target: '_blank'
-      }
-    }
-  ])
-  .use(markdownItReplaceLink)
-  .use(markdownItTocAndAnchor, {
-    anchorLink: false
-  });
-
 export default class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       doc: null,
+      docPath: '',
       config: {
         banner: {},
         menu: []
       }
     };
     this.exceed = new Exceed();
+    this.setMd('');
     this.getConfig('config/docs.json');
     this.getMarkdown(props.location.pathname);
     window.addEventListener('hashchange', this.onHashChange);
     window.addEventListener('click', this.onAnchorClick)
   }
+  setMd = (docPath)=> {
+    this.md = new MarkdownIt({
+      html: true,
+      typographer: true,
+      highlight: (str, lang) => {
+        lang = _.isEmpty(lang) || lang==='shell' ? 'bash' : lang;
+        if (lang && hljs.getLanguage(lang)) {
+          try {
+            return hljs.highlight(lang, str).value;
+          } catch (__) {}
+        }
+        return '';
+      },
+      replaceLink: (link) => {
+        if(link.match(/^(http|\/\/)/i)){
+
+        } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
+          link = `${path.join('/docs', link.replace(/\.\.\//, ''))}`;
+        } else if(link.match(/\.md$/)) {
+          link = `#${docPath}/${link}`;
+        } else if(link.match(/^(\.|\w|\/).*\w$/)) {
+          link = `#${docPath}/${link}/README.md`;
+        }
+        return link;
+      }
+    })
+      .use(markdownItLinkAttributes, [
+        {
+          pattern: /^(http|\/\/)/i,
+          attrs: {
+            target: '_blank'
+          }
+        }
+      ])
+      .use(markdownItReplaceLink)
+      .use(markdownItTocAndAnchor, {
+        anchorLink: false
+      });
+  };
   setExceedApi = (path) => {
     this.exceed.use([{
       id: 'getConfig',
@@ -84,21 +82,19 @@ export default class Home extends React.Component {
   };
   onAnchorClick = (e) => {
     const target = e.target;
-    if(target.className === 'pouch-doc-anchor') {
+    if(target.hash.match(/\//)) {
+
+    } else {
       const id = target.hash.replace(/^#/, '');
       scroller.scrollTo(id, {
         duration: 1000,
-        smooth: "easeInOutQuint",
+        smooth: "easeInOutQuint"
       });
       e.preventDefault();
     }
   };
   onHashChange = () => {
     const path = window.location.hash.replace(/^#/, '');
-    //animateScroll.scrollToTop({
-    //  duration: 1000,
-    //  smooth: "easeInOutQuint",
-    //});
     this.getMarkdown(path);
   };
   getConfig = (path) => {
@@ -112,12 +108,14 @@ export default class Home extends React.Component {
   };
   getMarkdown = (path) => {
     this.setExceedApi(path);
+    const docPath = _.reject(path.split('/'), (item)=>{return _.isEmpty(item) || item.match(/\.md/i) }).join("/");
+    this.setMd(docPath);
     this.exceed
       .fetch({
         api: 'getConfig'
       }).then((res) => {
       this.setState({
-        doc: md.render(_.isString(res) ? res : '')
+        doc: this.md.render(_.isString(res) ? res : '')
       });
     }).fail((err) => {
       this.setState({
@@ -131,30 +129,30 @@ export default class Home extends React.Component {
     return (
       <div>
         <div className="pouch-docs-banner">
-          <div className="pouch-docs-banner-inner">
-            <img src="https://img.alicdn.com/tfs/TB1l4EFXeuSBuNjSsplXXbe8pXa-1932-600.png" />
-            <div className="pouch-docs-banner-content">
-              <h1>{banner.text}</h1>
-              <div>
-                { _.map(banner.buttons, (item, key) =>{
-                  return <a key={key} className={`pouch-banner-btn pouch-banner-btn-${item.type}`} href={item.url}>
-                    {item.text}
-                  </a>
-                  }) }
-              </div>
+          <img src="https://img.alicdn.com/tfs/TB1l4EFXeuSBuNjSsplXXbe8pXa-1932-600.png" />
+          <div className="pouch-docs-banner-content">
+            <h1>{banner.text}</h1>
+            <div>
+              { _.map(banner.buttons, (item, key) =>{
+                return <a key={key} className={`pouch-banner-btn pouch-banner-btn-${item.type}`} href={item.url}>
+                  {item.text}
+                </a>
+                }) }
             </div>
           </div>
         </div>
-        <div className="pouch-docs-container">
-          <div className="pouch-doc-sidebar">
-            <ul className="pouch-doc-menu">
-              { _.map(menu, (item, key) => {
-                return <MenuItem location={location} key={key} item={item} />;
-                }) }
-            </ul>
-          </div>
-          <div className="pouch-doc-body">
-            <div className="markdown-body" dangerouslySetInnerHTML={{__html: this.state.doc}} />
+        <div className="pouch-cols-container">
+            <div className="pouch-docs-container">
+            <div className="pouch-doc-sidebar">
+              <ul className="pouch-doc-menu">
+                { _.map(menu, (item, key) => {
+                  return <MenuItem location={location} key={key} item={item} />;
+                  }) }
+              </ul>
+            </div>
+            <div className="pouch-doc-body">
+              <div className="markdown-body" dangerouslySetInnerHTML={{__html: this.state.doc}} />
+            </div>
           </div>
         </div>
       </div>

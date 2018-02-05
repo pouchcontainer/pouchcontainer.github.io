@@ -11,16 +11,37 @@ export default class Home extends React.Component {
   render() {
     return (
       <div className="pouch-home-body">
-        <div className="pouch-home-banner"></div>
+        <div className="pouch-home-banner">
+          <img className="pouch-home-banner-bg" src="https://img.alicdn.com/tfs/TB1LEsTXqmWBuNjy1XaXXXCbXXa-3840-1120.png"/>
+          <div className="pouch-cols-container">
+            <img className="pouch-home-banner-img" src="https://img.alicdn.com/tfs/TB1VCQyXpOWBuNjy0FiXXXFxVXa-434-762.png"/>
+            <div className="pouch-home-banner-rotate-img-wrap">
+              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-1" src="https://img.alicdn.com/tfs/TB1E33GXwmTBuNjy1XbXXaMrVXa-856-856.png"/>
+              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-2" src="https://img.alicdn.com/tfs/TB1Iw3GXwmTBuNjy1XbXXaMrVXa-1188-1188.png"/>
+              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-3" src="https://img.alicdn.com/tfs/TB1lskJXqmWBuNjy1XaXXXCbXXa-1576-1576.png"/>
+            </div>
+            <div className="pouch-home-banner-content">
+              <h1>Pouch - An Efficient Container Engine</h1>
+              <p>Pouch is an open-source project created by Alibaba Group to promote the container technology movement.</p>
+              <br/>
+              <a className="pouch-banner-btn pouch-banner-btn-white" href="javascript:void(0)">
+                Get Started
+              </a>
+            </div>
+          </div>
+        </div>
         <div className="pouch-home-introduction">
+          <div className="pouch-cols-container">
+          <img src="https://img.alicdn.com/tfs/TB1D_gQXqmWBuNjy1XaXXXCbXXa-304-206.png" />
           <div className="pouch-home-introduction-content">
             Pouch is a highly reliable container engine open sourced by Alibaba. It is an excellent software layer to fill up gap between business applications and underlying infrastructure. The strong-isolation ability and rich container are its representitive features.
           </div>
+          </div>
         </div>
-        <div className="pouch-home-advantages">
-
+        <div className="pouch-cols-container pouch-home-advantages">
           <h1>Advantages</h1>
           <div className="pouch-home-advantages-item pouch-home-advantages-item-1">
+            <img src="https://img.alicdn.com/tfs/TB1HU1AXTtYBeNjy1XdXXXXyVXa-1200-1000.png"/>
             <h2>Resource Utilization</h2>
             <div className="pouch-home-advantages-devider"></div>
             <div>
@@ -31,6 +52,7 @@ export default class Home extends React.Component {
             </div>
           </div>
           <div className="pouch-home-advantages-item pouch-home-advantages-item-2">
+            <img src="https://img.alicdn.com/tfs/TB1JU1AXTtYBeNjy1XdXXXXyVXa-1200-1002.png"/>
             <h2>Application Centric</h2>
             <div className="pouch-home-advantages-devider"></div>
             <div>
@@ -41,7 +63,7 @@ export default class Home extends React.Component {
             </div>
           </div>
         </div>
-        <ul className="pouch-home-features">
+        <ul className="pouch-cols-container pouch-home-features">
           <li>
             <img src="https://img.alicdn.com/tfs/TB1zWxzXuuSBuNjy1XcXXcYjFXa-78-80.png"/>
             <h2>Strong-Isolation</h2>
@@ -74,9 +96,11 @@ export default class Home extends React.Component {
           </li>
         </ul>
         <div className="pouch-home-architecture">
+          <img src="https://img.alicdn.com/tfs/TB1M29FXTtYBeNjy1XdXXXXyVXa-3840-1360.png"/>
           <h1>Architecture</h1>
           <p>We describe Pouch's architecture from two dimensions: ecosystem architecture which illustrates how Pouch fits into the container ecosystem and component architecture which describes the interactions between various components inside Pouch. For more details, please refer to file architecture.md.</p>
-          <a href="javascript:void(0)">
+          <br/><br/>
+          <a className="pouch-banner-btn pouch-banner-btn-orange" href="javascript:void(0)">
             Read the Architecture
           </a>
         </div>

@@ -17,17 +17,12 @@ $side_width: 250px;
 .pouch-docs-banner {
   height: 300px;
   background-image: linear-gradient(89deg, #FFA529 0%, #FF8025 100%);
-  .pouch-docs-banner-inner {
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  img {
     height: 300px;
-    width: $cols-width;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    img {
-      height: 300px;
-      animation: docBanner 8s linear 0s infinite alternate;
-    }
+    animation: docBanner 8s linear 0s infinite alternate;
   }
   .pouch-docs-banner-content {
     position: absolute;
@@ -43,44 +38,25 @@ $side_width: 250px;
       font-weight: normal;
     }
     .pouch-banner-btn {
-      display: inline-block;
-      height: 50px;
-      line-height: 50px;
-      border-radius: 25px;
       margin: 0 20px;
-      border: 2px solid $color_white;
-      padding: 0 50px;
-      transition-duration: 0.3s;
-      color: $color_white;
-      &:hover {
-        box-shadow: 0 0 20px $color_white;
-      }
-      &.pouch-banner-btn-white {
-        background: #FFF;
-        color: $color_orange;
-      }
-      &.pouch-banner-btn-orange {
-        color: $color_white;
-      }
     }
 
   }
 }
 .pouch-docs-container {
   margin: 50px auto;
-  width: $cols-width;
   &:after {
     display: table;
     clear: both;
     content: "";
   }
   .pouch-doc-sidebar {
-    width: $side_width;
+    width: 22%;
     float: left;
     border-right: 1px solid $border-color;
   }
   .pouch-doc-body {
-    width: $cols-width - $side_width;
+    width: 78%;
     float: left;
     padding: 0 40px;
     box-sizing: border-box;
