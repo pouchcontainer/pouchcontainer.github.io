@@ -22,16 +22,24 @@ class App extends React.Component {
       config: {
         header: {},
         footer: {}
-      }
+      },
+      headerMenuOpen: false
     };
     this.exceed = new Exceed();
     this.getConfig('config/layout.json');
+
+    document.addEventListener('click', ()=>{
+      this.setState({
+        headerMenuOpen: false
+      })
+    })
+
   }
   setExceedApi = (path) => {
     this.exceed.use([{
       id: 'getConfig',
       urls: {
-        production: `./${path.replace(/^\//,'')}`
+        production: `./${path.replace(/^\//, '')}`
       }
     }]);
   };
@@ -41,8 +49,13 @@ class App extends React.Component {
       .fetch({
         api: 'getConfig'
       }).then((config) => {
-      this.setState({ config });
+      this.setState({config});
     });
+  };
+  onTopMenuToggleClick = () => {
+    this.setState({
+      headerMenuOpen: true
+    })
   };
   render() {
     const { header, footer } = this.state.config;
@@ -50,17 +63,21 @@ class App extends React.Component {
       <HashRouter>
         <div>
           <header className="pouch-header">
-            <div className="pouch-footer-inner">
+            <div className="pouch-cols-container">
               <Link className="pouch-logo" to="/">
                 <img src="https://img.alicdn.com/tfs/TB1Qv19XbGYBuNjy0FoXXciBFXa-185-64.png"/>
               </Link>
-              <ul className="pouch-header-menu">
-                { _.map(header.menu, (item, key)=> {
-                  return <li key={key}>
-                    <Link className={`pouch-header-${item.type}`} to={item.url}>{item.text}</Link>
-                  </li>
-                  }) }
-              </ul>
+              <div className={`pouch-header-menu ${this.state.headerMenuOpen ? 'pouch-header-menu-open' : ''}`}>
+                <img onClick={this.onTopMenuToggleClick} className="pouch-header-menu-toggle"
+                     src="https://img.alicdn.com/tfs/TB1xSmoXGmWBuNjy1XaXXXCbXXa-200-200.png"/>
+                <ul>
+                  { _.map(header.menu, (item, key)=> {
+                    return <li key={key}>
+                      <Link className={`pouch-header-${item.type}`} to={item.url}>{item.text}</Link>
+                    </li>
+                    }) }
+                </ul>
+              </div>
             </div>
           </header>
           <div className="pouch-body">
@@ -72,7 +89,10 @@ class App extends React.Component {
             <div className="pouch-cols-container">
               <div className="pouch-footer-cols">
                 <div className="pouch-footer-col">
-                  <img height="45" src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>
+                  <dl className="pouch-footer-menu">
+                    <img className="pouch-logo" height="45"
+                         src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>
+                  </dl>
                 </div>
                 { _.map(footer.menu, (item, key)=> {
                   return <div key={key} className="pouch-footer-col">

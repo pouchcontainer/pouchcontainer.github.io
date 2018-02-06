@@ -52,6 +52,7 @@
     left: -110px;
     position: absolute;
     top:0;
+    transition-duration: 0.3s;
     img.pouch-home-banner-rotate-img {
       position: absolute;
       &.pouch-home-banner-rotate-img-1 {
@@ -73,20 +74,51 @@
       }
     }
   }
-
   .pouch-home-banner-content {
-    position: absolute;
-    top: 100px;
-    right: 100px;
-    width: 500px;
+    margin-top: 80px;
+    width: 550px;
     line-height: 1.4em;
+    transition-duration: 0.3s;
+    float: right;
+    font-size: 20px;
     h1 {
       line-height: 1.4em;
       font-weight: normal;
-      font-size: 40px;
+      font-size: 2em;
     }
     p {
-      font-size: 20px;
+      font-size: 1em;
+    }
+  }
+  @media screen and (max-width:1000px){
+    img.pouch-home-banner-img {
+      left: 50%;
+      margin-left: -108px;
+      opacity: 0.2;
+    }
+    .pouch-home-banner-content {
+      left: auto;
+      right: auto;
+      width: 90%;
+      position: static;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pouch-home-banner-rotate-img-wrap {
+      left: 50%;
+      margin-left: -400px;
+    }
+  }
+  @media screen and (max-width:450px){
+    .pouch-home-banner-content {
+      font-size: 16px;
+      width: 95%;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width:360px){
+    .pouch-home-banner-content {
+      font-size: 14px;
     }
   }
 }
@@ -94,20 +126,67 @@
 .pouch-home-introduction {
   background: $bg_gray;
   position: relative;
+  padding: 50px 0;
   img {
-    position: absolute;
-    top: 50%;
-    left: 80px;
-    width: 152px;
-    height: 103px;
-    margin-top: -50px;
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+    transition-duration: 0.3s;
   }
   .pouch-home-introduction-content {
-    margin: 0 auto;
-    padding: 80px 80px 80px 300px;
+    display: inline-block;
+    width: 90%;
+    vertical-align: middle;
     box-sizing: border-box;
     line-height: 1.7em;
+    padding-left: 50px;
     color: $color_light;
+    transition-duration: 0.3s;
+  }
+  @media screen and (max-width:900px){
+    img {
+      width: 15%;
+    }
+    .pouch-home-introduction-content {
+      width: 85%;
+    }
+  }
+  @media screen and (max-width:800px){
+    img {
+      width: 20%;
+    }
+    .pouch-home-introduction-content {
+      width: 80%;
+    }
+  }
+  @media screen and (max-width:700px){
+    img {
+      width: 30%;
+    }
+    .pouch-home-introduction-content {
+      width: 70%;
+    }
+  }
+  @media screen and (max-width:600px){
+    img {
+      width: 40%;
+    }
+    .pouch-home-introduction-content {
+      width: 60%;
+    }
+  }
+  @media screen and (max-width:500px){
+    img {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 50%;
+    }
+    .pouch-home-introduction-content {
+      display: block;
+      padding-left: 0;
+      width: auto;
+      text-align: center;
+    }
   }
 }
 
@@ -117,48 +196,75 @@
   h1 {
     font-size: 36px;
     text-align: center;
-    margin:0 0 100px 0;
+    margin:0 0 80px 0;
     line-height: 1em;
     font-weight: normal;
+    transition-duration: 0.3s;
   }
   .pouch-home-advantages-item {
     box-sizing: border-box;
     position: relative;
-    min-height: 500px;
-    padding: 80px 0;
-    img {
-      width: 600px;
-      height: 501px;
-      position: absolute;
-      top: 50%;
-      margin-top: -250px;
+    margin-bottom: 50px;
+    &:last-child {
+      margin-bottom: 0;
     }
-    .pouch-home-advantages-devider {
-      width: 40px;
-      height: 4px;
-      background: $color_orange;
-      margin: 30px 0;
+    &:after {
+      display: table;
+      clear: both;
+      content: "";
     }
-    h2 {
-      font-size: 20px;
-      line-height: 1em;
-      font-weight: normal;
+    .pouch-home-advantages-item-content, .pouch-home-advantages-item-img {
+      width: 50%;
+      display: inline-block;
+      vertical-align: middle;
+      transition-duration: 0.3s;
     }
-    p {
-      margin: 20px 0;
+    .pouch-home-advantages-item-img img {
+      width: 90%;
+      text-align: center;
+    }
+    .pouch-home-advantages-item-content {
+      .pouch-home-advantages-devider {
+        width: 40px;
+        height: 4px;
+        background: $color_orange;
+        margin: 30px 0;
+      }
+      h2 {
+        font-size: 20px;
+        line-height: 1em;
+        font-weight: normal;
+      }
+      p {
+        margin: 20px 0;
+      }
     }
   }
-  .pouch-home-advantages-item-1{
-    margin-bottom: 40px;
-    padding-left: 700px;
-    img {
-      left:0;
+  @media screen and (max-width:900px){
+    .pouch-home-advantages-item {
+      .pouch-home-advantages-item-img {
+        width: 60%;
+      }
+      .pouch-home-advantages-item-content {
+        width: 40%;
+      }
     }
   }
-  .pouch-home-advantages-item-2{
-    padding-right: 700px;
-    img {
-      right:0;
+  @media screen and (max-width:800px){
+    padding: 50px 0;
+    .pouch-home-advantages-item {
+      .pouch-home-advantages-item-img {
+        width: 50%;
+        vertical-align: top;
+        position: absolute;
+        top: 0;
+        right:0;
+        opacity: 0.2;
+      }
+      .pouch-home-advantages-item-content {
+        width: auto;
+        display: block;
+      }
     }
   }
 }
@@ -171,17 +277,15 @@
     clear: both;
     content: "";
   }
-  > li {
+  li {
     width: 33.3333%;
     float: left;
     padding-bottom: 20px;
     box-sizing: border-box;
-    height: 380px;
     overflow: hidden;
-    padding-right: 100px;
-    &:nth-child(3) {
-      padding-right: 0;
-    }
+    padding-right: 50px;
+    min-height: 400px;
+    position: relative;
     img {
       height: 80px;
       margin-bottom: 20px;
@@ -195,7 +299,42 @@
       color: $color_light;
 
     }
+    @media screen and (max-width: 2000px) {
+      &:nth-child(3) {
+        padding-right: 0;
+      }
+    }
+    @media screen and (max-width: 1000px) {
+      width: 50%;
+      min-height: 380px;
+      &:nth-child(3) {
+        padding-right: 50px;
+      }
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+    }
+    @media screen and (max-width: 550px) {
+      width: 100%;
+      min-height: 0;
+      &:nth-child(3) {
+        padding-right: 0;
+      }
+      &:nth-child(2) {
+        padding-right: 0;
+      }
+      h2 {
+        padding-left: 50px;
+      }
+      img {
+        position: absolute;
+        left:0;
+        top: 10px;
+        height: 30px;
+      }
+    }
   }
+
 }
 
 .pouch-home-architecture {
@@ -204,6 +343,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
+  transition-duration: 0.3s;
   > img {
     width: 1920px;
     height: 680px;
@@ -222,5 +362,12 @@
     width: 50%;
     margin: 0 auto;
     line-height: 1.8em;
+    transition-duration: 0.3s;
+  }
+  @media screen and (max-width: 550px) {
+    padding: 50px 0;
+    p {
+      width: 85%;
+    }
   }
 }

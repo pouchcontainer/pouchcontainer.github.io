@@ -24,7 +24,8 @@ export default class Home extends React.Component {
       config: {
         banner: {},
         menu: []
-      }
+      },
+      docMenuOpen: false
     };
     this.exceed = new Exceed();
     this.setMd('');
@@ -54,6 +55,8 @@ export default class Home extends React.Component {
 
         } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
           link = `${path.join(docPath, link)}`;
+        //} else if(link.match(/\//) && link.match(/\.\w+$/) == null){
+        //  link = `https://github.com/pouchcontainer/pouchcontainer.github.io/tree/master${docPath}/${link}`;
         } else  {
           link = `#${docPath}/${link}`;
         }
@@ -130,12 +133,18 @@ export default class Home extends React.Component {
       });
     });
   };
+  onDocMenuToggleClick=()=>{
+    this.setState({
+      docMenuOpen: !this.state.docMenuOpen
+    })
+  };
   render() {
     const { menu, banner } = this.state.config;
     const { location } = this.props;
     return (
       <div>
         <div className="pouch-docs-banner">
+          <div className="pouch-cols-container">
           <img src="https://img.alicdn.com/tfs/TB1l4EFXeuSBuNjSsplXXbe8pXa-1932-600.png" />
           <div className="pouch-docs-banner-content">
             <h1>{banner.text}</h1>
@@ -147,10 +156,14 @@ export default class Home extends React.Component {
                 }) }
             </div>
           </div>
+          </div>
         </div>
-        <div className="pouch-cols-container">
-            <div className="pouch-docs-container">
-            <div className="pouch-doc-sidebar">
+        <div className="pouch-docs-container">
+            <div className="pouch-cols-container">
+            <div className={`pouch-doc-sidebar ${ this.state.docMenuOpen ? 'pouch-doc-sidebar-open':''}`}>
+              <div onClick={this.onDocMenuToggleClick} className="pouch-doc-sidebar-toggle">
+                <img src={this.state.docMenuOpen ? 'https://img.alicdn.com/tfs/TB1I5itXQyWBuNjy0FpXXassXXa-200-200.png' : 'https://img.alicdn.com/tfs/TB1E6apXHGYBuNjy0FoXXciBFXa-200-200.png'}/>
+              </div>
               <ul className="pouch-doc-menu">
                 { _.map(menu, (item, key) => {
                   return <MenuItem location={location} key={key} item={item} />;

@@ -39,16 +39,20 @@ a {
 }
 
 .pouch-cols-container {
-  width: 1280px;
   margin: 0 auto;
   position: relative;
+  padding-left: 50px;
+  padding-right: 50px;
+  max-width: 1280px;
 }
 
 header.pouch-header {
   height: $header_height;
   background: #FFF;
-  padding: 0 50px;
   border-bottom: 1px solid $border-color;
+  .pouch-cols-container {
+    padding: 0 20px;
+  }
   .pouch-logo {
     height: $header_height;
     display: block;
@@ -62,7 +66,19 @@ header.pouch-header {
     float: right;
     margin: 0;
     padding: 0;
-    > li {
+    position: relative;
+    height: $header_height;
+    .pouch-header-menu-toggle {
+      width: 30px;
+      cursor: pointer;
+      display: none;
+      margin-top: 20px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
       float: left;
       margin: 0;
       padding: 0;
@@ -93,6 +109,48 @@ header.pouch-header {
         }
       }
     }
+
+    @media screen and (max-width: 700px) {
+      .pouch-header-menu-toggle {
+        display: block;
+      }
+      ul {
+        display: none;
+        position: absolute;
+        top: 100%;
+        z-index: 100;
+        width: 300px;
+        right: -50px;
+        background: #FFF;
+        padding: 10px 0;
+        li {
+          float: none;
+          a {
+            &:hover {
+              background: $color_orange;
+              color: $color_white !important;
+            }
+          }
+          a.pouch-header-link {
+            height: $header_height;
+            line-height: $header_height;
+          }
+          a.pouch-header-button {
+            height: $header_height;
+            line-height: $header_height;
+            border-radius: 0;
+            border: none;
+            margin: 0;
+          }
+        }
+      }
+      &.pouch-header-menu-open {
+        ul {
+          display: block;
+        }
+      }
+    }
+
   }
 }
 .pouch-body {
@@ -104,10 +162,15 @@ footer.pouch-footer {
   border-top: 1px solid $border-color;
   margin: 0 auto;
   .pouch-footer-cols {
-    padding: 60px 0;
+    padding: 30px 0;
     .pouch-footer-col {
       width: 33.3333%;
-      float: left;
+      display: inline-block;
+      transition-duration: 0.3s;
+      vertical-align: top;
+      @media screen and (max-width: 600px) {
+        width: 100%;
+      }
     }
     &:after {
       clear: both;
@@ -115,9 +178,10 @@ footer.pouch-footer {
       display: block;
     }
   }
+
   .pouch-footer-menu {
     font-size: 16px;
-    margin: 0;
+    margin: 30px 0;
     dt, dd {
       margin: 0;
       padding: 0;
@@ -131,6 +195,9 @@ footer.pouch-footer {
       height: 35px;
       line-height: 35px;
       transition-duration: 0.3s;
+      overflow: hidden;
+      text-overflow:ellipsis;
+      white-space: nowrap;
       &:hover {
         color: $color_orange;
       }

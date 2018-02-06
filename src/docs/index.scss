@@ -15,36 +15,42 @@ $side_width: 250px;
 }
 
 .pouch-docs-banner {
-  height: 300px;
   background-image: linear-gradient(89deg, #FFA529 0%, #FF8025 100%);
   text-align: center;
   position: relative;
-  overflow: hidden;
   img {
+    position: absolute;
     height: 300px;
+    width: 966px;
+    top:0;
+    left: 50%;
+    margin-left: -483px;
     animation: docBanner 8s linear 0s infinite alternate;
   }
   .pouch-docs-banner-content {
-    position: absolute;
-    left:0;
-    right:0;
-    top:0;
-    bottom:0;
     color: $color_white;
     padding: 80px 0;
+    font-size: 20px;
     h1 {
-      font-size: 40px;
-      margin-bottom: 40px;
+      font-size: 2em;
       font-weight: normal;
+      line-height: 1.3em;
+      margin: 0 0 20px 0;
     }
     .pouch-banner-btn {
-      margin: 0 20px;
+      margin: 10px 20px;
+    }
+
+    @media screen and (max-width:800px){
+      padding: 20px 0;
+      font-size: 16px;
     }
 
   }
 }
 .pouch-docs-container {
   margin: 50px auto;
+  position: relative;
   &:after {
     display: table;
     clear: both;
@@ -54,6 +60,29 @@ $side_width: 250px;
     width: 22%;
     float: left;
     border-right: 1px solid $border-color;
+    background: #FFF;
+    position: relative;
+    .pouch-doc-sidebar-toggle {
+      text-align: center;
+      cursor: pointer;
+      position: absolute;
+      top: -1px;
+      width: 40px;
+      right: -42px;
+      height: 30px;
+      line-height: 30px;
+      background: $bg_gray;
+      border: 1px solid $border-color;
+      border-bottom-right-radius: 5px;
+      border-top-right-radius: 5px;
+      display: none;
+      img {
+        width: 16px;
+        text-align: center;
+        vertical-align: middle;
+        display: inline-block;
+      }
+    }
   }
   .pouch-doc-body {
     width: 78%;
@@ -62,6 +91,29 @@ $side_width: 250px;
     box-sizing: border-box;
     border-left: 1px solid $border-color;
     margin-left: -1px;
+  }
+  @media screen and (max-width:900px){
+    .pouch-doc-sidebar {
+      position: absolute;
+      left: -251px;
+      top:0;
+      width: 250px;
+      border: 1px solid $border-color;
+      box-shadow: 5px 0 5px $bg_gray;
+      transition-duration: 0.3s;
+      .pouch-doc-sidebar-toggle {
+        display: block;
+      }
+      &.pouch-doc-sidebar-open {
+        left:0
+      }
+    }
+    .pouch-doc-body {
+      width: 100%;
+      border-left: none;
+      margin-left: 0;
+      padding: 0;
+    }
   }
 }
 

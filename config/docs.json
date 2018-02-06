@@ -159,7 +159,7 @@
     }
   ],
   "banner": {
-    "text": "Pouch - An Efficient Container Engine",
+    "text": "Pouch Container - An Efficient Container Engine",
     "buttons": [
       {
         "type": "white",
