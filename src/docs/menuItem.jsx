@@ -14,7 +14,7 @@ export default class MenuItem extends React.Component {
       return (
         <ul className="pouch-doc-menu">
           { _.map(item.children, (child, index) => {
-            const cls = `pouch-doc-menu-item ${location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
+            const cls = `pouch-doc-menu-item ${'#' + location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
             return (
             <li key={index}>
               <a className={cls} href={child.url}>{child.text}</a>
@@ -54,7 +54,7 @@ export default class MenuItem extends React.Component {
         </li>
       )
     } else {
-      const cls = `pouch-doc-menu-item ${location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''}`
+      const cls = `pouch-doc-menu-item ${'#' + location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
           <a className={cls} href={item.url}>{item.text}</a>
