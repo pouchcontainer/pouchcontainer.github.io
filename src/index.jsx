@@ -73,7 +73,7 @@ class App extends React.Component {
                 <ul>
                   { _.map(header.menu, (item, key)=> {
                     return <li key={key}>
-                      <Link className={`pouch-header-${item.type}`} to={item.url}>{item.text}</Link>
+                      <a className={`pouch-header-${item.type}`} href={item.url}>{item.text}</a>
                     </li>
                     }) }
                 </ul>

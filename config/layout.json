@@ -3,15 +3,15 @@
     "menu": [
       {
         "text": "Home",
-        "url": "/",
+        "url": "#/",
         "type": "link"
       }, {
         "text": "Docs",
-        "url": "/docs/architecture.md",
+        "url": "#/docs/architecture.md",
         "type": "link"
       }, {
         "text": "Download",
-        "url": "/docs/features/pouch_with_runV.md",
+        "url": "#/docs/features/pouch_with_runV.md",
         "type": "button"
       }
     ]

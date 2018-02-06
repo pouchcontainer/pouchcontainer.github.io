@@ -81,6 +81,8 @@
     transition-duration: 0.3s;
     float: right;
     font-size: 20px;
+    position: relative;
+    z-index: 1;
     h1 {
       line-height: 1.4em;
       font-weight: normal;
@@ -94,13 +96,12 @@
     img.pouch-home-banner-img {
       left: 50%;
       margin-left: -108px;
-      opacity: 0.2;
+      opacity: 0.1;
     }
     .pouch-home-banner-content {
       left: auto;
       right: auto;
       width: 90%;
-      position: static;
       margin-left: auto;
       margin-right: auto;
     }
@@ -130,16 +131,16 @@
   img {
     display: inline-block;
     width: 10%;
-    vertical-align: middle;
+    vertical-align: top;
     transition-duration: 0.3s;
   }
   .pouch-home-introduction-content {
     display: inline-block;
     width: 90%;
-    vertical-align: middle;
+    vertical-align: top;
     box-sizing: border-box;
     line-height: 1.7em;
-    padding-left: 50px;
+    padding-left: 80px;
     color: $color_light;
     transition-duration: 0.3s;
   }
@@ -236,6 +237,12 @@
         font-weight: normal;
       }
       p {
+        margin: 20px 0;
+      }
+      ul {
+        padding-left: 20px;
+      }
+      li {
         margin: 20px 0;
       }
     }

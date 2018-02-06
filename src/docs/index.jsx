@@ -55,8 +55,8 @@ export default class Home extends React.Component {
 
         } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
           link = `${path.join(docPath, link)}`;
-        //} else if(link.match(/\//) && link.match(/\.\w+$/) == null){
-        //  link = `https://github.com/pouchcontainer/pouchcontainer.github.io/tree/master${docPath}/${link}`;
+        } else if(link.match(/\.\w+$/) === null && link.match(/^#/) === null){
+          link = `https://github.com/pouchcontainer/pouchcontainer.github.io/tree/master${docPath}/${link}`;
         } else  {
           link = `#${docPath}/${link}`;
         }
@@ -139,7 +139,7 @@ export default class Home extends React.Component {
     })
   };
   render() {
-    const { menu, banner } = this.state.config;
+    const { docMenu, banner } = this.state.config;
     const { location } = this.props;
     return (
       <div>
@@ -165,7 +165,7 @@ export default class Home extends React.Component {
                 <img src={this.state.docMenuOpen ? 'https://img.alicdn.com/tfs/TB1I5itXQyWBuNjy0FpXXassXXa-200-200.png' : 'https://img.alicdn.com/tfs/TB1E6apXHGYBuNjy0FoXXciBFXa-200-200.png'}/>
               </div>
               <ul className="pouch-doc-menu">
-                { _.map(menu, (item, key) => {
+                { _.map(docMenu, (item, key) => {
                   return <MenuItem location={location} key={key} item={item} />;
                   }) }
               </ul>

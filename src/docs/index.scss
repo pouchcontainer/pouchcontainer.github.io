@@ -18,6 +18,7 @@ $side_width: 250px;
   background-image: linear-gradient(89deg, #FFA529 0%, #FF8025 100%);
   text-align: center;
   position: relative;
+  overflow: hidden;
   img {
     position: absolute;
     height: 300px;
@@ -31,6 +32,8 @@ $side_width: 250px;
     color: $color_white;
     padding: 80px 0;
     font-size: 20px;
+    z-index: 1;
+    position: relative;
     h1 {
       font-size: 2em;
       font-weight: normal;
@@ -99,7 +102,7 @@ $side_width: 250px;
       top:0;
       width: 250px;
       border: 1px solid $border-color;
-      box-shadow: 5px 0 5px $bg_gray;
+      box-shadow: 5px 5px 5px $bg_gray;
       transition-duration: 0.3s;
       .pouch-doc-sidebar-toggle {
         display: block;

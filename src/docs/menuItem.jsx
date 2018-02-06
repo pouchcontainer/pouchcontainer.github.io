@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 export default class MenuItem extends React.Component {
   constructor(props) {
@@ -18,7 +17,7 @@ export default class MenuItem extends React.Component {
             const cls = `pouch-doc-menu-item ${location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
             return (
             <li key={index}>
-              <Link className={cls} to={child.url}>{child.text}</Link>
+              <a className={cls} href={child.url}>{child.text}</a>
             </li>
               );
             }) }
@@ -45,11 +44,9 @@ export default class MenuItem extends React.Component {
       height: hasChildren && this.state.open ? 40 * ( item.children.length + 1 ) : 40
     };
     if(hasChildren) {
-      const url = `/docs/${item.text.toLowerCase()}/README.md`;
-      const cls = `pouch-doc-menu-item ${location.pathname === url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
-          <a onClick={this.toggle} className={cls} href="javascript:void(0)">
+          <a className="pouch-doc-menu-item" onClick={this.toggle} href="javascript:void(0)">
             {item.text}
             <img style={{transform: `rotate(${this.state.open ? 0:-90}deg)`}} className="pouch-doc-menu-toggle" src="https://img.alicdn.com/tfs/TB1BMUGXh9YBuNjy0FfXXXIsVXa-22-21.jpg" />
           </a>
@@ -60,7 +57,7 @@ export default class MenuItem extends React.Component {
       const cls = `pouch-doc-menu-item ${location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
-          <Link className={cls} to={ item.url }>{item.text}</Link>
+          <a className={cls} href={item.url}>{item.text}</a>
         </li>
       )
     }

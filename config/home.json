@@ -1,0 +1,65 @@
+{
+  "banner": {
+    "title": "PouchContainer - An Efficient Container Engine",
+    "description": "PouchContainer is an open-source project created by Alibaba Group to promote the container technology movement.",
+    "button": {
+      "text": "Get Started",
+      "url": "#/docs/architecture.md"
+    }
+  },
+  "introduction": "PouchContainer is a highly reliable container engine open sourced by Alibaba. It is an excellent software layer to fill up gap between business applications and underlying infrastructure. The strong-isolation ability and rich container are its representitive features.",
+  "advantages": [
+    {
+      "title": "Resource Utilization",
+      "description": "PouchContainer significantly improves resource utilization:",
+      "children": [
+        "PouchContainer is compatible with OCI image spec. Applications can minimize their storage usage with layered image structure.",
+        "Incremental image distribution, saves datacenter bandwidth consumption.",
+        "Significantly less runtime overhead than VM-based technologies."
+      ]
+    }, {
+      "title": "Application Centric",
+      "description": "PouchContainer offers a more \"application centric\" approach for application development:",
+      "children": [
+        "PouchContainer provides strong runtime isolation between applications, with cutting-edge technology both within kernel support and beyond kernel mode.",
+        "PouchContainer enables cross-platform and cross-OS application delivery.",
+        "PouchContainer supports standardized application image spec, so application sharing and reusing becomes trivial for developers and operators."
+      ]
+    }
+  ],
+  "features": [
+    {
+      "img": "https://img.alicdn.com/tfs/TB1zWxzXuuSBuNjy1XcXXcYjFXa-78-80.png",
+      "title": "Strong-Isolation",
+      "description": "PouchContainer is designed to be secure by default. Include lots of security features, like hypervisor-based container technology, lxcfs, patched Linux kernel and so on."
+    }, {
+      "img": "https://img.alicdn.com/tfs/TB1XujgXDtYBeNjy1XdXXXXyVXa-78-80.png",
+      "title": "Rich Container",
+      "description": "Besides the common ways of running container, PouchContainer includes a rich container mode, which integrates more services, hooks, and many others container internals to guarantee container's running like usual."
+    }, {
+      "img": "https://img.alicdn.com/tfs/TB1RclwXwmTBuNjy1XbXXaMrVXa-78-80.png",
+      "title": "P2P Image Distribution",
+      "description": "PouchContainer utilizes Dragonfly, a P2P-base distribution system, to achieve lightning-fast container image distributio"
+    }, {
+      "img": "https://img.alicdn.com/tfs/TB1FqxzXuuSBuNjy1XcXXcYjFXa-78-80.png",
+      "title": "Kernel Compatibility",
+      "description": "Enables OCI-compatible runtimes to work on old kernel versions, like linux kernel 2.6.32+."
+    }, {
+      "img": "https://img.alicdn.com/tfs/TB1BGxzXuuSBuNjy1XcXXcYjFXa-78-80.png",
+      "title": "Stability",
+      "description": "PouchContainer has been running on tens of thousand nodes in Alibaba stablely, and helped all online transactions of Alibaba's 2017 Singles Day smoothly on millions of containers."
+    }, {
+      "img": "https://img.alicdn.com/tfs/TB1DWxzXuuSBuNjy1XcXXcYjFXa-78-80.png",
+      "title": "Simplicity",
+      "description": "Very few steps needed to setup PouchContainer and we will continue to evolve as the developer community works together."
+    }
+  ],
+  "architecture": {
+    "title": "Architecture",
+    "description": "We describe Pouch's architecture from two dimensions: ecosystem architecture which illustrates how PouchContainer fits into the container ecosystem and component architecture which describes the interactions between various components inside PouchContainer. For more details, please refer to file architecture.md.",
+    "button": {
+      "text": "Read the Architecture",
+      "url": "javascript:void(0)"
+    }
+  }
+}
