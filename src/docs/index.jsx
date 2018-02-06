@@ -30,10 +30,13 @@ export default class Home extends React.Component {
     this.setMd('');
     this.getConfig('config/docs.json');
     this.getMarkdown(props.location.pathname);
-    window.addEventListener('hashchange', this.onHashChange);
-    window.addEventListener('click', this.onAnchorClick)
   }
+  componentDidMount = ()=> {
+    window.addEventListener('hashchange', this.onHashChange);
+    document.getElementsByClassName('pouch-doc-body')[0].addEventListener('click', this.onAnchorClick);
+  };
   setMd = (docPath)=> {
+    docPath = `/${docPath}`
     this.md = new MarkdownIt({
       html: true,
       typographer: true,
@@ -50,11 +53,9 @@ export default class Home extends React.Component {
         if(link.match(/^(http|\/\/)/i)){
 
         } else if(link.match(/static_files\/.*\.(gif|jpeg|png|jpg|bmp)/i)){
-          link = `${path.join('/docs', link.replace(/\.\.\//, ''))}`;
-        } else if(link.match(/\.md$/)) {
+          link = `${path.join(docPath, link)}`;
+        } else  {
           link = `#${docPath}/${link}`;
-        } else if(link.match(/^(\.|\w|\/).*\w$/)) {
-          link = `#${docPath}/${link}/README.md`;
         }
         return link;
       }
@@ -64,6 +65,10 @@ export default class Home extends React.Component {
           pattern: /^(http|\/\/)/i,
           attrs: {
             target: '_blank'
+          }
+        }, {
+          attrs: {
+            className: 'pouch-doc-link'
           }
         }
       ])
@@ -76,26 +81,28 @@ export default class Home extends React.Component {
     this.exceed.use([{
       id: 'getConfig',
       urls: {
-        production: `./${path.replace(/^\//,'')}`
+        production: path
       }
     }]);
   };
   onAnchorClick = (e) => {
     const target = e.target;
-    if(target.hash.match(/\//)) {
-
-    } else {
-      const id = target.hash.replace(/^#/, '');
-      scroller.scrollTo(id, {
-        duration: 1000,
-        smooth: "easeInOutQuint"
+    if(target.getAttribute('class')==='pouch-doc-link' && target.hash) {
+      const hash = _.reject(target.hash.split('#'), (str)=> {
+        return _.isEmpty(str);
       });
-      e.preventDefault();
+      if(hash.length > 1){
+          const id = hash[hash.length-1];
+          scroller.scrollTo(id, {
+            duration: 1000,
+            smooth: "easeInOutQuint"
+          });
+          e.preventDefault();
+      }
     }
   };
   onHashChange = () => {
-    const path = window.location.hash.replace(/^#/, '');
-    this.getMarkdown(path);
+    this.getMarkdown(window.location.hash.replace(/^#/, ''));
   };
   getConfig = (path) => {
     this.setExceedApi(path);
@@ -109,11 +116,11 @@ export default class Home extends React.Component {
   getMarkdown = (path) => {
     this.setExceedApi(path);
     const docPath = _.reject(path.split('/'), (item)=>{return _.isEmpty(item) || item.match(/\.md/i) }).join("/");
-    this.setMd(docPath);
     this.exceed
       .fetch({
         api: 'getConfig'
       }).then((res) => {
+      this.setMd(docPath);
       this.setState({
         doc: this.md.render(_.isString(res) ? res : '')
       });

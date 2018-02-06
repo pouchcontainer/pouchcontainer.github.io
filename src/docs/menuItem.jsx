@@ -10,18 +10,23 @@ export default class MenuItem extends React.Component {
   }
   renderSubMenu = () => {
     const { item, location } = this.props;
-    return (
-      <ul className="pouch-doc-menu">
-        { _.map(item.children, (child, index) => {
-          const cls = `pouch-doc-menu-item ${location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
-          return (
-          <li key={index}>
-            <Link className={cls} to={child.url}>{child.text}</Link>
-          </li>
-            );
-          }) }
-      </ul>
-    );
+
+    if(location && location.pathname) {
+      return (
+        <ul className="pouch-doc-menu">
+          { _.map(item.children, (child, index) => {
+            const cls = `pouch-doc-menu-item ${location.pathname === child.url ? 'pouch-doc-menu-item-selected' : ''}`
+            return (
+            <li key={index}>
+              <Link className={cls} to={child.url}>{child.text}</Link>
+            </li>
+              );
+            }) }
+        </ul>
+      );
+    }
+
+
   };
   onNavClick = (item)=> {
     if(item.url) {
@@ -44,10 +49,10 @@ export default class MenuItem extends React.Component {
       const cls = `pouch-doc-menu-item ${location.pathname === url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
-          <Link onClick={this.toggle} className={cls} to={ url }>
+          <a onClick={this.toggle} className={cls} href="javascript:void(0)">
             {item.text}
             <img style={{transform: `rotate(${this.state.open ? 0:-90}deg)`}} className="pouch-doc-menu-toggle" src="https://img.alicdn.com/tfs/TB1BMUGXh9YBuNjy0FfXXXIsVXa-22-21.jpg" />
-          </Link>
+          </a>
           { this.renderSubMenu() }
         </li>
       )
@@ -55,9 +60,7 @@ export default class MenuItem extends React.Component {
       const cls = `pouch-doc-menu-item ${location.pathname === item.url ? 'pouch-doc-menu-item-selected' : ''}`
       return (
         <li style={style}>
-          <Link onClick={this.toggle} className={cls} to={ item.url }>
-            {item.text}
-          </Link>
+          <Link className={cls} to={ item.url }>{item.text}</Link>
         </li>
       )
     }
