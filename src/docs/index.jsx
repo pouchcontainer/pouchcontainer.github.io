@@ -12,6 +12,7 @@ import { animateScroll, scroller } from 'react-scroll'
 import MenuItem from './menuItem.jsx';
 
 import 'highlight.js/styles/github.css';
+
 import '../components/markdown.scss';
 import './index.scss';
 

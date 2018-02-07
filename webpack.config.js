@@ -28,7 +28,9 @@ module.exports = {
   },
   externals: {
      react: 'React',
-     'react-dom': 'ReactDOM'
+     'react-dom': 'ReactDOM',
+    lodash: '_',
+    'highlight.js': 'hljs'
   },
   query: {
     cacheDirectory: true,
