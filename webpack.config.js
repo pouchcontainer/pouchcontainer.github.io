@@ -31,7 +31,8 @@ module.exports = {
      'react-dom': 'ReactDOM',
     lodash: '_',
     'highlight.js': 'hljs',
-    'markdown-it': 'markdownit'
+    'markdown-it': 'markdownit',
+    'react-router-dom': 'ReactRouterDOM'
   },
   query: {
     cacheDirectory: true,
