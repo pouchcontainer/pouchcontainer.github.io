@@ -105,7 +105,10 @@ export default class Home extends React.Component {
     }
   };
   onHashChange = () => {
-    this.getMarkdown(window.location.hash.replace(/^#/, ''));
+    const url = window.location.hash.replace(/^#/, '');
+    if(url != '/') {
+      this.getMarkdown(window.location.hash.replace(/^#/, ''));
+    }
   };
   getConfig = (path) => {
     this.setExceedApi(path);
