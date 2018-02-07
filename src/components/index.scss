@@ -49,7 +49,6 @@ a {
 header.pouch-header {
   height: $header_height;
   background: #FFF;
-  border-bottom: 1px solid $border-color;
   .pouch-cols-container {
     padding: 0 20px;
   }
@@ -57,9 +56,15 @@ header.pouch-header {
     height: $header_height;
     display: block;
     float: left;
+    line-height: $header_height;
+    font-size: 23px;
+    color: $color_orange;
     img {
-      height: $header_height/2;
-      margin-top: $header_height/4;
+      height: 35px;
+      vertical-align: middle;
+      margin-right: 15px;
+      display: inline-block;
+      margin-top: -2px;
     }
   }
   .pouch-header-menu {

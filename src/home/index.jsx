@@ -138,7 +138,10 @@ export default class Home extends React.Component {
         </div>
         <div className="pouch-home-introduction">
           <div className="pouch-cols-container">
-            <img src="https://img.alicdn.com/tfs/TB1D_gQXqmWBuNjy1XaXXXCbXXa-304-206.png" />
+            <div className="pouch-home-introduction-title">
+              <div className="pouch-home-introduction-title-bg">?</div>
+              <div  className="pouch-home-introduction-title-text">What is <span>PouchContainer</span></div>
+            </div>
             <div className="pouch-home-introduction-content">{introduction}</div>
           </div>
         </div>
