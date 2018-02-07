@@ -32,6 +32,7 @@ $side_width: 250px;
     font-size: 20px;
     z-index: 1;
     position: relative;
+    transition-duration: 0.3s;
     h1 {
       font-size: 2em;
       font-weight: normal;
@@ -43,7 +44,7 @@ $side_width: 250px;
     }
 
     @media screen and (max-width:800px){
-      padding: 20px 0;
+      padding: 50px 0;
       font-size: 16px;
     }
 
