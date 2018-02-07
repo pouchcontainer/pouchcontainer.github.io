@@ -6,11 +6,9 @@ $side_width: 250px;
 {
   from {
     transform: scale(1);
-    opacity: 1;
   }
   to {
-    transform: scale(2);
-    opacity: 0.5;
+    transform: scale(1.3);
   }
 }
 
@@ -26,7 +24,7 @@ $side_width: 250px;
     top:0;
     left: 50%;
     margin-left: -483px;
-    animation: docBanner 8s linear 0s infinite alternate;
+    animation: docBanner 6s linear 0s infinite alternate;
   }
   .pouch-docs-banner-content {
     color: $color_white;

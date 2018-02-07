@@ -24,6 +24,15 @@
     opacity: 0.5;
   }
 }
+@keyframes homeBannerImg
+{
+  from {
+    transform: scale(1.08)
+  }
+  to {
+    transform: scale(0.98)
+  }
+}
 .pouch-home-banner {
   height: 560px;
   position: relative;
@@ -45,6 +54,7 @@
     height: 381px;
     left: 180px;
     transition-duration: 0.3s;
+    animation: homeBannerImg 2.5s linear 0s infinite alternate;
   }
   .pouch-home-banner-rotate-img-wrap {
     height: 560px;
