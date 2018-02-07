@@ -30,7 +30,8 @@ module.exports = {
      react: 'React',
      'react-dom': 'ReactDOM',
     lodash: '_',
-    'highlight.js': 'hljs'
+    'highlight.js': 'hljs',
+    'markdown-it': 'markdownit'
   },
   query: {
     cacheDirectory: true,
