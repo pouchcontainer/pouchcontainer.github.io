@@ -5,7 +5,9 @@ import _ from 'lodash';
 import MarkdownIt from 'markdown-it';
 import markdownItReplaceLink from "markdown-it-replace-link";
 import markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
+import markdownItGithubPreamble from 'markdown-it-github-preamble';
 import markdownItLinkAttributes from 'markdown-it-link-attributes';
+
 import hljs from 'highlight.js';
 import { animateScroll, scroller } from 'react-scroll'
 
@@ -76,6 +78,7 @@ export default class Home extends React.Component {
           }
         }
       ])
+      .use(markdownItGithubPreamble)
       .use(markdownItReplaceLink)
       .use(markdownItTocAndAnchor, {
         anchorLink: false

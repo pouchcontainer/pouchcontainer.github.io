@@ -44,13 +44,13 @@ module.exports = {
       { test: /\.scss$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader!sass-loader') },
       {
         test: /\.(js|jsx)?$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         loader: 'babel-loader',
         query: {
           presets: ['es2015', 'stage-0', 'stage-1', 'react'],
           plugins: [
             'add-module-exports',
-            'transform-object-assign',
+            'transform-object-assign'
           ],
         },
       },
