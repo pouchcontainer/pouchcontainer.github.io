@@ -4,7 +4,7 @@ import path from 'path';
 import _ from 'lodash';
 import MarkdownIt from 'markdown-it';
 import markdownItReplaceLink from "markdown-it-replace-link";
-import markdownItTocAndAnchor from 'markdown-it-toc-and-anchor';
+import markdownGithubToc from 'markdown-it-github-toc';
 import markdownItGithubPreamble from 'markdown-it-github-preamble';
 import markdownItLinkAttributes from 'markdown-it-link-attributes';
 
@@ -80,7 +80,7 @@ export default class Home extends React.Component {
       ])
       .use(markdownItGithubPreamble)
       .use(markdownItReplaceLink)
-      .use(markdownItTocAndAnchor, {
+      .use(markdownGithubToc, {
         anchorLink: false
       });
   };
