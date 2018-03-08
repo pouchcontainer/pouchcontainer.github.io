@@ -37,16 +37,11 @@
   height: 560px;
   position: relative;
   color: #FFF;
-  background: $bg_gray;
   overflow: hidden;
-  .pouch-home-banner-bg {
-    height: 560px;
-    width: 1920px;
-    position: absolute;
-    left: 50%;
-    top:0 ;
-    margin-left: -960px;
-  }
+  background-image: url("https://img.alicdn.com/tfs/TB1LEsTXqmWBuNjy1XaXXXCbXXa-3840-1120.png");
+  background-size: 1920px;
+  background-color: $bg_gray;
+  background-position: center top;
   img.pouch-home-banner-img {
     position: absolute;
     top: 80px;
@@ -365,9 +360,7 @@
         vertical-align: middle;
       }
     }
-
   }
-
 }
 
 .pouch-home-architecture {
@@ -377,6 +370,9 @@
   position: relative;
   overflow: hidden;
   transition-duration: 0.3s;
+  background-image: url("https://img.alicdn.com/tfs/TB1M29FXTtYBeNjy1XdXXXXyVXa-3840-1360.png");
+  background-size: 1920px;
+  background-position: center top;
   > img {
     width: 1920px;
     height: 680px;

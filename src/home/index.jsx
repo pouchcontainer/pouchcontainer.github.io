@@ -109,7 +109,6 @@ export default class Home extends React.Component {
     if(!_.isEmpty(architecture)) {
       return (
         <div className="pouch-home-architecture">
-          <img src="https://img.alicdn.com/tfs/TB1M29FXTtYBeNjy1XdXXXXyVXa-3840-1360.png"/>
           <h1>{architecture.title}</h1>
           <p>{architecture.description}</p>
           <br/><br/>
@@ -125,7 +124,6 @@ export default class Home extends React.Component {
     return (
       <div className="pouch-home-body">
         <div className="pouch-home-banner">
-          <img className="pouch-home-banner-bg" src="https://img.alicdn.com/tfs/TB1LEsTXqmWBuNjy1XaXXXCbXXa-3840-1120.png"/>
           <div className="pouch-cols-container">
             <img className="pouch-home-banner-img" src="https://img.alicdn.com/tfs/TB1VCQyXpOWBuNjy0FiXXXFxVXa-434-762.png"/>
             <div className="pouch-home-banner-rotate-img-wrap">
