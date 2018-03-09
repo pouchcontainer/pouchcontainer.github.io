@@ -124,14 +124,16 @@ export default class Home extends React.Component {
     return (
       <div className="pouch-home-body">
         <div className="pouch-home-banner">
-          <div className="pouch-cols-container">
-            <img className="pouch-home-banner-img" src="https://img.alicdn.com/tfs/TB1VCQyXpOWBuNjy0FiXXXFxVXa-434-762.png"/>
-            <div className="pouch-home-banner-rotate-img-wrap">
-              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-1" src="https://img.alicdn.com/tfs/TB1E33GXwmTBuNjy1XbXXaMrVXa-856-856.png"/>
-              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-2" src="https://img.alicdn.com/tfs/TB1Iw3GXwmTBuNjy1XbXXaMrVXa-1188-1188.png"/>
-              <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-3" src="https://img.alicdn.com/tfs/TB1lskJXqmWBuNjy1XaXXXCbXXa-1576-1576.png"/>
+          <div  className="pouch-home-banner-bg">
+            <div className="pouch-cols-container">
+              <img className="pouch-home-banner-img" src="https://img.alicdn.com/tfs/TB1VCQyXpOWBuNjy0FiXXXFxVXa-434-762.png"/>
+              <div className="pouch-home-banner-rotate-img-wrap">
+                <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-1" src="https://img.alicdn.com/tfs/TB1E33GXwmTBuNjy1XbXXaMrVXa-856-856.png"/>
+                <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-2" src="https://img.alicdn.com/tfs/TB1Iw3GXwmTBuNjy1XbXXaMrVXa-1188-1188.png"/>
+                <img className="pouch-home-banner-rotate-img pouch-home-banner-rotate-img-3" src="https://img.alicdn.com/tfs/TB1lskJXqmWBuNjy1XaXXXCbXXa-1576-1576.png"/>
+              </div>
+              { this.renderBanner() }
             </div>
-            { this.renderBanner() }
           </div>
         </div>
         <div className="pouch-home-introduction">

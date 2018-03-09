@@ -38,10 +38,15 @@
   position: relative;
   color: #FFF;
   overflow: hidden;
-  background-image: url("https://img.alicdn.com/tfs/TB1LEsTXqmWBuNjy1XaXXXCbXXa-3840-1120.png");
-  background-size: 1920px;
-  background-color: $bg_gray;
-  background-position: center top;
+
+  background-image: linear-gradient(89deg, #FFA529 0%, #FF8025 100%);
+  .pouch-home-banner-bg {
+    background-image: url("https://img.alicdn.com/tfs/TB1bFQOcuuSBuNjy1XcXXcYjFXa-3840-544.png");
+    background-size: 1920px;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    height: 560px;
+  }
   img.pouch-home-banner-img {
     position: absolute;
     top: 80px;
