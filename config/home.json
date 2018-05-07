@@ -3,7 +3,7 @@
     "title": "PouchContainer - An Efficient Container Engine",
     "description": "PouchContainer is an open-source project created by Alibaba Group to promote the container technology movement.",
     "button": {
-      "text": "Get Started",
+      "text": "Started",
       "url": "#/docs/architecture.md"
     }
   },
