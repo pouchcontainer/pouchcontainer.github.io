@@ -11,7 +11,7 @@
         "type": "link"
       }, {
         "text": "Download",
-        "url": "#/docs/features/pouch_with_runV.md",
+        "url": "https://github.com/alibaba/pouch",
         "type": "button"
       }
     ]
@@ -23,51 +23,48 @@
         "children": [
           {
             "text": "Getting Started",
-            "url": "javascript:void(0)"
-          }, {
-            "text": "Introduction",
-            "url": "javascript:void(0)"
+            "url": "#/docs/README.md"
           }, {
             "text": "Features",
-            "url": "javascript:void(0)"
+            "url": "#/docs/features/pouch_with_prometheus.md"
           }, {
             "text": "Architecture",
-            "url": "javascript:void(0)"
+            "url": "#/docs/architecture.md"
           }, {
             "text": "CLI Manual",
-            "url": "javascript:void(0)"
+            "url": "#/docs/commandline/pouch.md"
           }, {
             "text": "API Manual",
-            "url": "javascript:void(0)"
+            "url": "#/docs/api/HTTP_API.md"
           }, {
             "text": "FAQ",
-            "url": "javascript:void(0)"
+            "url": "https://github.com/alibaba/pouch/blob/master/FAQ.md"
           }
         ]
       }, {
-        "text": "Cotribution",
+        "text": "Contribution",
         "children": [
           {
-            "text": "Contributing",
-            "url": "javascript:void(0)"
+            "text": "Contributing Guide",
+            "url": "https://github.com/alibaba/pouch/blob/master/CONTRIBUTING.md"
           }, {
             "text": "Reporting security issues",
-            "url": "javascript:void(0)"
+            "url": "pouch-dev@list.alibaba-inc.com"
           }, {
             "text": "Reporting general issues",
-            "url": "javascript:void(0)"
+            "url": "https://github.com/alibaba/pouch/issues/new"
           }, {
-            "text": "Code and doc contribution",
-            "url": "javascript:void(0)"
+            "text": "Contributors",
+            "url": "https://github.com/alibaba/pouch/blob/master/CONTRIBUTORS"
           }, {
             "text": "Roadmap",
-            "url": "javascript:void(0)"
+            "url": "https://github.com/alibaba/pouch/blob/master/ROADMAP.md"
           }, {
-            "text": "Contact",
-            "url": "javascript:void(0)"
+            "text": "Contact us",
+            "url": "pouch-dev@list.alibaba-inc.com"
           }, {
             "text": "License",
-            "url": "javascript:void(0)"
+            "url": "https://github.com/alibaba/pouch/blob/master/LICENSE"
           }
         ]
       }
