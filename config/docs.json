@@ -2,20 +2,20 @@
   "docMenu": [
     {
       "text": "Get Started",
-      "url": "#/docs/README.md"
+      "url": "#/pouch/docs/README.md"
     }, {
       "text": "Architecture",
-      "url": "#/docs/architecture.md"
+      "url": "#/pouch/docs/architecture.md"
     }, {
       "open": true,
       "text": "API",
       "children": [
         {
           "text": "HTTP API",
-          "url": "#/docs/api/HTTP_API.md"
+          "url": "#/pouch/docs/api/HTTP_API.md"
         }, {
           "text": "HTTP API ChangeLog",
-          "url": "#/docs/api/HTTP_API_CHANGELOG.md"
+          "url": "#/pouch/docs/api/HTTP_API_CHANGELOG.md"
         }
       ]
     }, {
@@ -24,16 +24,16 @@
       "children": [
         {
           "text": "Prometheus",
-          "url": "#/docs/features/pouch_with_prometheus.md"
+          "url": "#/pouch/docs/features/pouch_with_prometheus.md"
         }, {
           "text": "Rich Container",
-          "url": "#/docs/features/pouch_with_rich_container.md"
+          "url": "#/pouch/docs/features/pouch_with_rich_container.md"
         }, {
           "text": "RunV",
-          "url": "#/docs/features/pouch_with_runV.md"
+          "url": "#/pouch/docs/features/pouch_with_runV.md"
         }, {
           "text": "TLS",
-          "url": "#/docs/features/pouch_with_tls.md"
+          "url": "#/pouch/docs/features/pouch_with_tls.md"
         }
       ]
     }, {
@@ -42,10 +42,10 @@
       "children": [
         {
           "text": "CRI Introduction",
-          "url": "#/docs/kubernetes/pouch_with_cri_introduction.md"
+          "url": "#/pouch/docs/kubernetes/pouch_with_cri_introduction.md"
         }, {
           "text": "CRI Verification",
-          "url": "#/docs/kubernetes/pouch_with_cri_verification.md"
+          "url": "#/pouch/docs/kubernetes/pouch_with_cri_verification.md"
         }
       ]
     }, {
@@ -54,10 +54,10 @@
       "children": [
         {
           "text": "Debug In Travis",
-          "url": "#/docs/test/debug_in_travis.md"
+          "url": "#/pouch/docs/test/debug_in_travis.md"
         }, {
           "text": "Test",
-          "url": "#/docs/test/test.md"
+          "url": "#/pouch/docs/test/test.md"
         }
       ]
     }, {
@@ -66,94 +66,94 @@
       "children": [
         {
           "text": "pouch",
-          "url": "#/docs/commandline/pouch.md"
+          "url": "#/pouch/docs/commandline/pouch.md"
         }, {
           "text": "pouch_create",
-          "url": "#/docs/commandline/pouch_create.md"
+          "url": "#/pouch/docs/commandline/pouch_create.md"
         }, {
           "text": "pouch_exec",
-          "url": "#/docs/commandline/pouch_exec.md"
+          "url": "#/pouch/docs/commandline/pouch_exec.md"
         }, {
           "text": "pouch_gen-doc",
-          "url": "#/docs/commandline/pouch_gen-doc.md"
+          "url": "#/pouch/docs/commandline/pouch_gen-doc.md"
         }, {
           "text": "pouch_image",
-          "url": "#/docs/commandline/pouch_image.md"
+          "url": "#/pouch/docs/commandline/pouch_image.md"
         }, {
           "text": "pouch_image_inspect",
-          "url": "#/docs/commandline/pouch_image_inspect.md"
+          "url": "#/pouch/docs/commandline/pouch_image_inspect.md"
         }, {
           "text": "pouch_images",
-          "url": "#/docs/commandline/pouch_images.md"
+          "url": "#/pouch/docs/commandline/pouch_images.md"
         }, {
           "text": "pouch_inspect",
-          "url": "#/docs/commandline/pouch_inspect.md"
+          "url": "#/pouch/docs/commandline/pouch_inspect.md"
         }, {
           "text": "pouch_network",
-          "url": "#/docs/commandline/pouch_network.md"
+          "url": "#/pouch/docs/commandline/pouch_network.md"
         }, {
           "text": "pouch_network_create",
-          "url": "#/docs/commandline/pouch_network_create.md"
+          "url": "#/pouch/docs/commandline/pouch_network_create.md"
         }, {
           "text": "pouch_network_inspect",
-          "url": "#/docs/commandline/pouch_network_inspect.md"
+          "url": "#/pouch/docs/commandline/pouch_network_inspect.md"
         }, {
           "text": "pouch_network_list",
-          "url": "#/docs/commandline/pouch_network_list.md"
+          "url": "#/pouch/docs/commandline/pouch_network_list.md"
         }, {
           "text": "pouch_network_remove",
-          "url": "#/docs/commandline/pouch_network_remove.md"
+          "url": "#/pouch/docs/commandline/pouch_network_remove.md"
         }, {
           "text": "pouch_pause",
-          "url": "#/docs/commandline/pouch_pause.md"
+          "url": "#/pouch/docs/commandline/pouch_pause.md"
         }, {
           "text": "pouch_ps",
-          "url": "#/docs/commandline/pouch_ps.md"
+          "url": "#/pouch/docs/commandline/pouch_ps.md"
         }, {
           "text": "pouch_pull",
-          "url": "#/docs/commandline/pouch_pull.md"
+          "url": "#/pouch/docs/commandline/pouch_pull.md"
         }, {
           "text": "pouch_rename",
-          "url": "#/docs/commandline/pouch_rename.md"
+          "url": "#/pouch/docs/commandline/pouch_rename.md"
         }, {
           "text": "pouch_rm",
-          "url": "#/docs/commandline/pouch_rm.md"
+          "url": "#/pouch/docs/commandline/pouch_rm.md"
         }, {
           "text": "pouch_rmi",
-          "url": "#/docs/commandline/pouch_rmi.md"
+          "url": "#/pouch/docs/commandline/pouch_rmi.md"
         }, {
           "text": "pouch_run",
-          "url": "#/docs/commandline/pouch_run.md"
+          "url": "#/pouch/docs/commandline/pouch_run.md"
         }, {
           "text": "pouch_start",
-          "url": "#/docs/commandline/pouch_start.md"
+          "url": "#/pouch/docs/commandline/pouch_start.md"
         }, {
           "text": "pouch_stop",
-          "url": "#/docs/commandline/pouch_stop.md"
+          "url": "#/pouch/docs/commandline/pouch_stop.md"
         }, {
           "text": "pouch_unpause",
-          "url": "#/docs/commandline/pouch_unpause.md"
+          "url": "#/pouch/docs/commandline/pouch_unpause.md"
         }, {
           "text": "pouch_version",
-          "url": "#/docs/commandline/pouch_version.md"
+          "url": "#/pouch/docs/commandline/pouch_version.md"
         }, {
           "text": "pouch_volume",
-          "url": "#/docs/commandline/pouch_volume.md"
+          "url": "#/pouch/docs/commandline/pouch_volume.md"
         }, {
           "text": "pouch_volume_create",
-          "url": "#/docs/commandline/pouch_volume_create.md"
+          "url": "#/pouch/docs/commandline/pouch_volume_create.md"
         }, {
           "text": "pouch_volume_inspect",
-          "url": "#/docs/commandline/pouch_volume_inspect.md"
+          "url": "#/pouch/docs/commandline/pouch_volume_inspect.md"
         }, {
           "text": "pouch_volume_list",
-          "url": "#/docs/commandline/pouch_volume_list.md"
+          "url": "#/pouch/docs/commandline/pouch_volume_list.md"
         }, {
           "text": "pouch_volume_remove",
-          "url": "#/docs/commandline/pouch_volume_remove.md"
+          "url": "#/pouch/docs/commandline/pouch_volume_remove.md"
         }, {
           "text": "pouchd",
-          "url": "#/docs/commandline/pouchd.md"
+          "url": "#/pouch/docs/commandline/pouchd.md"
         }
       ]
     }
@@ -164,11 +164,11 @@
       {
         "type": "white",
         "text": "Get Started",
-        "url": "#/docs/README.md"
+        "url": "#/pouch/docs/README.md"
       }, {
         "type": "orange",
         "text": "Contribute Docs",
-        "url": "#/docs/architecture.md"
+        "url": "#/pouch/docs/architecture.md"
       }
     ]
   }

@@ -83,7 +83,7 @@ class App extends React.Component {
           </header>
           <div className="pouch-body">
             <Route exact path="/" component={PageHome}/>
-            <Route path="/docs" component={PageDocs}/>
+            <Route path="/pouch/docs" component={PageDocs}/>
             <Route path="/community" component={PageCommunity}/>
           </div>
           <footer className="pouch-footer">

@@ -7,7 +7,7 @@
         "type": "link"
       }, {
         "text": "Docs",
-        "url": "#/docs/architecture.md",
+        "url": "#/pouch/docs/architecture.md",
         "type": "link"
       }, {
         "text": "Download",
@@ -23,19 +23,19 @@
         "children": [
           {
             "text": "Getting Started",
-            "url": "#/docs/README.md"
+            "url": "#/pouch/docs/README.md"
           }, {
             "text": "Features",
-            "url": "#/docs/features/pouch_with_prometheus.md"
+            "url": "#/pouch/docs/features/pouch_with_prometheus.md"
           }, {
             "text": "Architecture",
-            "url": "#/docs/architecture.md"
+            "url": "#/pouch/docs/architecture.md"
           }, {
             "text": "CLI Manual",
-            "url": "#/docs/commandline/pouch.md"
+            "url": "#/pouch/docs/commandline/pouch.md"
           }, {
             "text": "API Manual",
-            "url": "#/docs/api/HTTP_API.md"
+            "url": "#/pouch/docs/api/HTTP_API.md"
           }, {
             "text": "FAQ",
             "url": "https://github.com/alibaba/pouch/blob/master/FAQ.md"

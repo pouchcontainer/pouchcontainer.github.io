@@ -59,7 +59,7 @@
     "description": "We describe Pouch's architecture from two dimensions: ecosystem architecture which illustrates how PouchContainer fits into the container ecosystem and component architecture which describes the interactions between various components inside PouchContainer. For more details, please refer to file architecture.md.",
     "button": {
       "text": "Read the Architecture",
-      "url": "#/docs/architecture.md"
+      "url": "#/pouch/docs/architecture.md"
     }
   }
 }
