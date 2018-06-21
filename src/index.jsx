@@ -92,7 +92,7 @@ class App extends React.Component {
                 <div className="pouch-footer-col">
                   <dl className="pouch-footer-menu">
                     <img className="pouch-logo" height="45"
-                         src="https://img.alicdn.com/tfs/TB1zf2aXmCWBuNjy0FhXXb6EVXa-282-104.png"/>
+                         src="https://img.alicdn.com/tfs/TB1YtbczeuSBuNjy1XcXXcYjFXa-1030-130.png"/>
                   </dl>
                 </div>
                 { _.map(footer.menu, (item, key)=> {
