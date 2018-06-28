@@ -65,8 +65,7 @@ class App extends React.Component {
           <header className="pouch-header">
             <div className="pouch-cols-container">
               <Link className="pouch-logo" to="/">
-                <img src="https://img.alicdn.com/tfs/TB1MZjRXHSYBuNjSspfXXcZCpXa-304-379.png" />
-                PouchContainer
+                <img src="https://img.alicdn.com/tfs/TB1.GoZAKSSBuNjy0FlXXbBpVXa-1030-130.png" />
               </Link>
               <div className={`pouch-header-menu ${this.state.headerMenuOpen ? 'pouch-header-menu-open' : ''}`}>
                 <img onClick={this.onTopMenuToggleClick} className="pouch-header-menu-toggle"
